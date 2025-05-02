@@ -1,0 +1,1924 @@
+[2025-04-26 04:28:16 +0000] [13974] [INFO] Starting gunicorn 23.0.0
+[2025-04-26 04:28:16 +0000] [13974] [INFO] Listening at: http://0.0.0.0:5000 (13974)
+[2025-04-26 04:28:16 +0000] [13974] [INFO] Using worker: sync
+[2025-04-26 04:28:16 +0000] [13975] [INFO] Booting worker with pid: 13975
+[2025-04-26 04:28:49 +0000] [13974] [INFO] Handling signal: hup
+[2025-04-26 04:28:49 +0000] [13974] [INFO] Hang up: Master
+[2025-04-26 04:28:49 +0000] [13974] [ERROR] Worker (pid:13975) was sent SIGHUP!
+[2025-04-26 04:28:49 +0000] [14035] [INFO] Booting worker with pid: 14035
+[2025-04-26 10:42:21 +0000] [13974] [CRITICAL] WORKER TIMEOUT (pid:14035)
+[2025-04-26 10:42:21 +0000] [14035] [ERROR] Error handling request (no URI read)
+Traceback (most recent call last):
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 133, in handle
+    req = next(parser)
+          ^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/parser.py", line 41, in __next__
+    self.mesg = self.mesg_class(self.cfg, self.unreader, self.source_addr, self.req_count)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 259, in __init__
+    super().__init__(cfg, unreader, peer_addr)
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 60, in __init__
+    unused = self.parse(self.unreader)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 271, in parse
+    self.get_data(unreader, buf, stop=True)
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 262, in get_data
+    data = unreader.read()
+           ^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 36, in read
+    d = self.chunk()
+        ^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 63, in chunk
+    return self.sock.recv(self.mxchunk)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-04-26 10:42:21 +0000] [14035] [INFO] Worker exiting (pid: 14035)
+[2025-04-26 10:42:21 +0000] [67170] [INFO] Booting worker with pid: 67170
+[2025-04-26 10:45:20 +0000] [13974] [CRITICAL] WORKER TIMEOUT (pid:67170)
+[2025-04-26 10:45:20 +0000] [67170] [ERROR] Error handling request (no URI read)
+Traceback (most recent call last):
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 133, in handle
+    req = next(parser)
+          ^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/parser.py", line 41, in __next__
+    self.mesg = self.mesg_class(self.cfg, self.unreader, self.source_addr, self.req_count)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 259, in __init__
+    super().__init__(cfg, unreader, peer_addr)
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 60, in __init__
+    unused = self.parse(self.unreader)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 271, in parse
+    self.get_data(unreader, buf, stop=True)
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 262, in get_data
+    data = unreader.read()
+           ^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 36, in read
+    d = self.chunk()
+        ^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 63, in chunk
+    return self.sock.recv(self.mxchunk)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-04-26 10:45:20 +0000] [67170] [INFO] Worker exiting (pid: 67170)
+[2025-04-26 10:45:20 +0000] [67521] [INFO] Booting worker with pid: 67521
+[2025-04-26 11:25:45 +0000] [13974] [CRITICAL] WORKER TIMEOUT (pid:67521)
+[2025-04-26 11:25:45 +0000] [67521] [ERROR] Error handling request (no URI read)
+Traceback (most recent call last):
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 133, in handle
+    req = next(parser)
+          ^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/parser.py", line 41, in __next__
+    self.mesg = self.mesg_class(self.cfg, self.unreader, self.source_addr, self.req_count)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 259, in __init__
+    super().__init__(cfg, unreader, peer_addr)
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 60, in __init__
+    unused = self.parse(self.unreader)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 271, in parse
+    self.get_data(unreader, buf, stop=True)
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 262, in get_data
+    data = unreader.read()
+           ^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 36, in read
+    d = self.chunk()
+        ^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 63, in chunk
+    return self.sock.recv(self.mxchunk)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-04-26 11:25:45 +0000] [67521] [INFO] Worker exiting (pid: 67521)
+[2025-04-26 11:25:45 +0000] [73220] [INFO] Booting worker with pid: 73220
+[2025-04-26 11:50:18 +0000] [73220] [WARNING] Invalid request from ip=3.16.161.69: Invalid HTTP request line: 'SSH-2.0-Go'
+[2025-04-26 11:57:30 +0000] [73220] [WARNING] Invalid request from ip=47.245.116.41: Invalid HTTP request line: ''
+[2025-04-26 17:28:55 +0000] [73220] [WARNING] Invalid request from ip=206.168.34.195: Invalid HTTP Version: (2, 0)
+[2025-04-26 17:32:54 +0000] [13974] [CRITICAL] WORKER TIMEOUT (pid:73220)
+[2025-04-26 17:32:54 +0000] [73220] [ERROR] Error handling request (no URI read)
+Traceback (most recent call last):
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 133, in handle
+    req = next(parser)
+          ^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/parser.py", line 41, in __next__
+    self.mesg = self.mesg_class(self.cfg, self.unreader, self.source_addr, self.req_count)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 259, in __init__
+    super().__init__(cfg, unreader, peer_addr)
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 60, in __init__
+    unused = self.parse(self.unreader)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 271, in parse
+    self.get_data(unreader, buf, stop=True)
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 262, in get_data
+    data = unreader.read()
+           ^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 36, in read
+    d = self.chunk()
+        ^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 63, in chunk
+    return self.sock.recv(self.mxchunk)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-04-26 17:32:54 +0000] [73220] [INFO] Worker exiting (pid: 73220)
+[2025-04-26 17:32:54 +0000] [123450] [INFO] Booting worker with pid: 123450
+[2025-04-26 17:42:28,184] ERROR in app: Exception on /chat [POST]
+Traceback (most recent call last):
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/app.py", line 165, in chat
+    reply = get_response(data["model"], data["context"], data["chat_history"], prompt)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/utils/model_handler.py", line 32, in get_response
+    response = requests.post(url, headers=headers, json=payload)
+                             ^^^
+UnboundLocalError: cannot access local variable 'url' where it is not associated with a value
+[2025-04-26 17:42:58 +0000] [13974] [CRITICAL] WORKER TIMEOUT (pid:123450)
+[2025-04-26 17:42:58 +0000] [123450] [ERROR] Error handling request (no URI read)
+Traceback (most recent call last):
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 133, in handle
+    req = next(parser)
+          ^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/parser.py", line 41, in __next__
+    self.mesg = self.mesg_class(self.cfg, self.unreader, self.source_addr, self.req_count)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 259, in __init__
+    super().__init__(cfg, unreader, peer_addr)
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 60, in __init__
+    unused = self.parse(self.unreader)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 271, in parse
+    self.get_data(unreader, buf, stop=True)
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 262, in get_data
+    data = unreader.read()
+           ^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 36, in read
+    d = self.chunk()
+        ^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 63, in chunk
+    return self.sock.recv(self.mxchunk)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-04-26 17:42:58 +0000] [123450] [INFO] Worker exiting (pid: 123450)
+[2025-04-26 17:42:58 +0000] [124596] [INFO] Booting worker with pid: 124596
+[2025-04-26 17:54:21,129] ERROR in app: Exception on /chat [POST]
+Traceback (most recent call last):
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/app.py", line 165, in chat
+    reply = get_response(data["model"], data["context"], data["chat_history"], prompt)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/utils/model_handler.py", line 32, in get_response
+    response = requests.post(url, headers=headers, json=payload)
+                             ^^^
+UnboundLocalError: cannot access local variable 'url' where it is not associated with a value
+[2025-04-26 17:54:26,351] ERROR in app: Exception on /chat [POST]
+Traceback (most recent call last):
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/app.py", line 165, in chat
+    reply = get_response(data["model"], data["context"], data["chat_history"], prompt)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/utils/model_handler.py", line 32, in get_response
+    response = requests.post(url, headers=headers, json=payload)
+                             ^^^
+UnboundLocalError: cannot access local variable 'url' where it is not associated with a value
+[2025-04-26 18:00:05,090] ERROR in app: Exception on /chat [POST]
+Traceback (most recent call last):
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/app.py", line 165, in chat
+    reply = get_response(data["model"], data["context"], data["chat_history"], prompt)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/utils/model_handler.py", line 32, in get_response
+    response = requests.post(url, headers=headers, json=payload)
+                             ^^^
+UnboundLocalError: cannot access local variable 'url' where it is not associated with a value
+[2025-04-26 18:28:47 +0000] [13974] [CRITICAL] WORKER TIMEOUT (pid:124596)
+[2025-04-26 18:28:47 +0000] [124596] [ERROR] Error handling request (no URI read)
+Traceback (most recent call last):
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 133, in handle
+    req = next(parser)
+          ^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/parser.py", line 41, in __next__
+    self.mesg = self.mesg_class(self.cfg, self.unreader, self.source_addr, self.req_count)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 259, in __init__
+    super().__init__(cfg, unreader, peer_addr)
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 60, in __init__
+    unused = self.parse(self.unreader)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 271, in parse
+    self.get_data(unreader, buf, stop=True)
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 262, in get_data
+    data = unreader.read()
+           ^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 36, in read
+    d = self.chunk()
+        ^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 63, in chunk
+    return self.sock.recv(self.mxchunk)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-04-26 18:28:47 +0000] [124596] [INFO] Worker exiting (pid: 124596)
+[2025-04-26 18:28:47 +0000] [130815] [INFO] Booting worker with pid: 130815
+[2025-04-26 18:41:46 +0000] [13974] [CRITICAL] WORKER TIMEOUT (pid:130815)
+[2025-04-26 18:41:46 +0000] [130815] [ERROR] Error handling request (no URI read)
+Traceback (most recent call last):
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 133, in handle
+    req = next(parser)
+          ^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/parser.py", line 41, in __next__
+    self.mesg = self.mesg_class(self.cfg, self.unreader, self.source_addr, self.req_count)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 259, in __init__
+    super().__init__(cfg, unreader, peer_addr)
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 60, in __init__
+    unused = self.parse(self.unreader)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 271, in parse
+    self.get_data(unreader, buf, stop=True)
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 262, in get_data
+    data = unreader.read()
+           ^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 36, in read
+    d = self.chunk()
+        ^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 63, in chunk
+    return self.sock.recv(self.mxchunk)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-04-26 18:41:46 +0000] [130815] [INFO] Worker exiting (pid: 130815)
+[2025-04-26 18:41:46 +0000] [132573] [INFO] Booting worker with pid: 132573
+[2025-04-26 22:44:47 +0000] [132573] [WARNING] Invalid request from ip=74.179.96.36: Invalid HTTP request line: ''
+[2025-04-27 00:05:21 +0000] [13974] [CRITICAL] WORKER TIMEOUT (pid:132573)
+[2025-04-27 00:05:21 +0000] [132573] [ERROR] Error handling request (no URI read)
+Traceback (most recent call last):
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 133, in handle
+    req = next(parser)
+          ^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/parser.py", line 41, in __next__
+    self.mesg = self.mesg_class(self.cfg, self.unreader, self.source_addr, self.req_count)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 259, in __init__
+    super().__init__(cfg, unreader, peer_addr)
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 60, in __init__
+    unused = self.parse(self.unreader)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 271, in parse
+    self.get_data(unreader, buf, stop=True)
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 262, in get_data
+    data = unreader.read()
+           ^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 36, in read
+    d = self.chunk()
+        ^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 63, in chunk
+    return self.sock.recv(self.mxchunk)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-04-27 00:05:21 +0000] [132573] [INFO] Worker exiting (pid: 132573)
+[2025-04-27 00:05:21 +0000] [176448] [INFO] Booting worker with pid: 176448
+[2025-04-27 08:20:19 +0000] [176448] [WARNING] Invalid request from ip=162.142.125.198: Invalid HTTP Version: (2, 0)
+[2025-04-27 08:54:02 +0000] [13974] [CRITICAL] WORKER TIMEOUT (pid:176448)
+[2025-04-27 08:54:02 +0000] [176448] [ERROR] Error handling request (no URI read)
+Traceback (most recent call last):
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 133, in handle
+    req = next(parser)
+          ^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/parser.py", line 41, in __next__
+    self.mesg = self.mesg_class(self.cfg, self.unreader, self.source_addr, self.req_count)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 259, in __init__
+    super().__init__(cfg, unreader, peer_addr)
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 60, in __init__
+    unused = self.parse(self.unreader)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 274, in parse
+    line, rbuf = self.read_line(unreader, buf, self.limit_request_line)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 326, in read_line
+    self.get_data(unreader, buf)
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 262, in get_data
+    data = unreader.read()
+           ^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 36, in read
+    d = self.chunk()
+        ^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 63, in chunk
+    return self.sock.recv(self.mxchunk)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-04-27 08:54:02 +0000] [176448] [INFO] Worker exiting (pid: 176448)
+[2025-04-27 08:54:02 +0000] [249189] [INFO] Booting worker with pid: 249189
+[2025-04-27 09:37:06 +0000] [249189] [WARNING] Invalid request from ip=206.168.34.205: Invalid HTTP Version: (2, 0)
+[2025-04-27 11:28:19 +0000] [249189] [WARNING] Invalid request from ip=3.17.207.153: Invalid HTTP request line: 'SSH-2.0-Go'
+[2025-04-27 15:33:46 +0000] [13974] [INFO] Handling signal: term
+[2025-04-27 15:33:46 +0000] [249189] [INFO] Worker exiting (pid: 249189)
+[2025-04-27 15:33:46 +0000] [13974] [INFO] Shutting down: Master
+[2025-04-27 15:34:32 +0000] [304175] [INFO] Starting gunicorn 23.0.0
+[2025-04-27 15:34:32 +0000] [304175] [INFO] Listening at: http://0.0.0.0:5000 (304175)
+[2025-04-27 15:34:32 +0000] [304175] [INFO] Using worker: sync
+[2025-04-27 15:34:32 +0000] [304176] [INFO] Booting worker with pid: 304176
+[2025-04-27 15:36:04 +0000] [304175] [CRITICAL] WORKER TIMEOUT (pid:304176)
+[2025-04-27 15:36:04 +0000] [304176] [ERROR] Error handling request (no URI read)
+Traceback (most recent call last):
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 133, in handle
+    req = next(parser)
+          ^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/parser.py", line 41, in __next__
+    self.mesg = self.mesg_class(self.cfg, self.unreader, self.source_addr, self.req_count)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 259, in __init__
+    super().__init__(cfg, unreader, peer_addr)
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 60, in __init__
+    unused = self.parse(self.unreader)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 271, in parse
+    self.get_data(unreader, buf, stop=True)
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 262, in get_data
+    data = unreader.read()
+           ^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 36, in read
+    d = self.chunk()
+        ^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 63, in chunk
+    return self.sock.recv(self.mxchunk)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-04-27 15:36:04 +0000] [304176] [INFO] Worker exiting (pid: 304176)
+[2025-04-27 15:36:04 +0000] [304376] [INFO] Booting worker with pid: 304376
+[2025-04-27 15:37:35 +0000] [304175] [CRITICAL] WORKER TIMEOUT (pid:304376)
+[2025-04-27 15:37:35 +0000] [304376] [ERROR] Error handling request (no URI read)
+Traceback (most recent call last):
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 133, in handle
+    req = next(parser)
+          ^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/parser.py", line 41, in __next__
+    self.mesg = self.mesg_class(self.cfg, self.unreader, self.source_addr, self.req_count)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 259, in __init__
+    super().__init__(cfg, unreader, peer_addr)
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 60, in __init__
+    unused = self.parse(self.unreader)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 271, in parse
+    self.get_data(unreader, buf, stop=True)
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 262, in get_data
+    data = unreader.read()
+           ^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 36, in read
+    d = self.chunk()
+        ^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 63, in chunk
+    return self.sock.recv(self.mxchunk)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-04-27 15:37:35 +0000] [304376] [INFO] Worker exiting (pid: 304376)
+[2025-04-27 15:37:35 +0000] [304557] [INFO] Booting worker with pid: 304557
+[2025-04-27 15:42:28 +0000] [304175] [INFO] Handling signal: term
+[2025-04-27 15:42:28 +0000] [304557] [INFO] Worker exiting (pid: 304557)
+[2025-04-27 15:42:28 +0000] [304175] [INFO] Shutting down: Master
+[2025-04-27 15:42:51 +0000] [305302] [INFO] Starting gunicorn 23.0.0
+[2025-04-27 15:42:51 +0000] [305302] [INFO] Listening at: http://0.0.0.0:5000 (305302)
+[2025-04-27 15:42:51 +0000] [305302] [INFO] Using worker: sync
+[2025-04-27 15:42:51 +0000] [305303] [INFO] Booting worker with pid: 305303
+[2025-04-27 15:43:30 +0000] [305302] [CRITICAL] WORKER TIMEOUT (pid:305303)
+[2025-04-27 15:43:30 +0000] [305303] [ERROR] Error handling request (no URI read)
+Traceback (most recent call last):
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 133, in handle
+    req = next(parser)
+          ^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/parser.py", line 41, in __next__
+    self.mesg = self.mesg_class(self.cfg, self.unreader, self.source_addr, self.req_count)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 259, in __init__
+    super().__init__(cfg, unreader, peer_addr)
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 60, in __init__
+    unused = self.parse(self.unreader)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 271, in parse
+    self.get_data(unreader, buf, stop=True)
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 262, in get_data
+    data = unreader.read()
+           ^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 36, in read
+    d = self.chunk()
+        ^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 63, in chunk
+    return self.sock.recv(self.mxchunk)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-04-27 15:43:30 +0000] [305303] [INFO] Worker exiting (pid: 305303)
+[2025-04-27 15:43:30 +0000] [305406] [INFO] Booting worker with pid: 305406
+[2025-04-27 18:06:23 +0000] [305302] [CRITICAL] WORKER TIMEOUT (pid:305406)
+[2025-04-27 18:06:23 +0000] [305406] [ERROR] Error handling request (no URI read)
+Traceback (most recent call last):
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 133, in handle
+    req = next(parser)
+          ^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/parser.py", line 41, in __next__
+    self.mesg = self.mesg_class(self.cfg, self.unreader, self.source_addr, self.req_count)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 259, in __init__
+    super().__init__(cfg, unreader, peer_addr)
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 60, in __init__
+    unused = self.parse(self.unreader)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 271, in parse
+    self.get_data(unreader, buf, stop=True)
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 262, in get_data
+    data = unreader.read()
+           ^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 36, in read
+    d = self.chunk()
+        ^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 63, in chunk
+    return self.sock.recv(self.mxchunk)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-04-27 18:06:23 +0000] [305406] [INFO] Worker exiting (pid: 305406)
+[2025-04-27 18:06:23 +0000] [324682] [INFO] Booting worker with pid: 324682
+[2025-04-27 18:22:41 +0000] [305302] [INFO] Handling signal: term
+[2025-04-27 18:22:41 +0000] [324682] [INFO] Worker exiting (pid: 324682)
+[2025-04-27 18:22:41 +0000] [305302] [INFO] Shutting down: Master
+[2025-04-27 18:22:51 +0000] [327116] [INFO] Starting gunicorn 23.0.0
+[2025-04-27 18:22:51 +0000] [327116] [INFO] Listening at: http://0.0.0.0:5000 (327116)
+[2025-04-27 18:22:51 +0000] [327116] [INFO] Using worker: sync
+[2025-04-27 18:22:51 +0000] [327117] [INFO] Booting worker with pid: 327117
+[2025-04-27 18:23:47 +0000] [327116] [INFO] Handling signal: term
+[2025-04-27 18:23:47 +0000] [327117] [INFO] Worker exiting (pid: 327117)
+[2025-04-27 18:23:47 +0000] [327116] [INFO] Shutting down: Master
+[2025-04-27 18:23:51 +0000] [327240] [INFO] Starting gunicorn 23.0.0
+[2025-04-27 18:23:51 +0000] [327240] [INFO] Listening at: http://0.0.0.0:5000 (327240)
+[2025-04-27 18:23:51 +0000] [327240] [INFO] Using worker: sync
+[2025-04-27 18:23:51 +0000] [327241] [INFO] Booting worker with pid: 327241
+[2025-04-27 18:24:26 +0000] [327240] [CRITICAL] WORKER TIMEOUT (pid:327241)
+[2025-04-27 18:24:26 +0000] [327241] [ERROR] Error handling request (no URI read)
+Traceback (most recent call last):
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 133, in handle
+    req = next(parser)
+          ^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/parser.py", line 41, in __next__
+    self.mesg = self.mesg_class(self.cfg, self.unreader, self.source_addr, self.req_count)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 259, in __init__
+    super().__init__(cfg, unreader, peer_addr)
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 60, in __init__
+    unused = self.parse(self.unreader)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 271, in parse
+    self.get_data(unreader, buf, stop=True)
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 262, in get_data
+    data = unreader.read()
+           ^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 36, in read
+    d = self.chunk()
+        ^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 63, in chunk
+    return self.sock.recv(self.mxchunk)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-04-27 18:24:26 +0000] [327241] [INFO] Worker exiting (pid: 327241)
+[2025-04-27 18:24:26 +0000] [327300] [INFO] Booting worker with pid: 327300
+[2025-04-27 18:46:31 +0000] [327240] [CRITICAL] WORKER TIMEOUT (pid:327300)
+[2025-04-27 18:46:31 +0000] [327300] [ERROR] Error handling request (no URI read)
+Traceback (most recent call last):
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 133, in handle
+    req = next(parser)
+          ^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/parser.py", line 41, in __next__
+    self.mesg = self.mesg_class(self.cfg, self.unreader, self.source_addr, self.req_count)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 259, in __init__
+    super().__init__(cfg, unreader, peer_addr)
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 60, in __init__
+    unused = self.parse(self.unreader)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 271, in parse
+    self.get_data(unreader, buf, stop=True)
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 262, in get_data
+    data = unreader.read()
+           ^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 36, in read
+    d = self.chunk()
+        ^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 63, in chunk
+    return self.sock.recv(self.mxchunk)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-04-27 18:46:31 +0000] [327300] [INFO] Worker exiting (pid: 327300)
+[2025-04-27 18:46:31 +0000] [330769] [INFO] Booting worker with pid: 330769
+[2025-04-27 21:30:33 +0000] [327240] [INFO] Handling signal: hup
+[2025-04-27 21:30:33 +0000] [327240] [INFO] Hang up: Master
+[2025-04-27 21:30:33 +0000] [327240] [ERROR] Worker (pid:330769) was sent SIGHUP!
+[2025-04-27 21:30:33 +0000] [352699] [INFO] Booting worker with pid: 352699
+[2025-04-27 22:29:05 +0000] [327240] [INFO] Handling signal: term
+[2025-04-27 22:29:05 +0000] [352699] [INFO] Worker exiting (pid: 352699)
+[2025-04-27 22:29:05 +0000] [327240] [INFO] Shutting down: Master
+[2025-04-27 22:30:08 +0000] [361261] [INFO] Starting gunicorn 23.0.0
+[2025-04-27 22:30:08 +0000] [361261] [INFO] Listening at: http://0.0.0.0:5000 (361261)
+[2025-04-27 22:30:08 +0000] [361261] [INFO] Using worker: sync
+[2025-04-27 22:30:08 +0000] [361262] [INFO] Booting worker with pid: 361262
+[2025-04-27 22:31:01 +0000] [361261] [CRITICAL] WORKER TIMEOUT (pid:361262)
+[2025-04-27 22:31:01 +0000] [361262] [ERROR] Error handling request (no URI read)
+Traceback (most recent call last):
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 133, in handle
+    req = next(parser)
+          ^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/parser.py", line 41, in __next__
+    self.mesg = self.mesg_class(self.cfg, self.unreader, self.source_addr, self.req_count)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 259, in __init__
+    super().__init__(cfg, unreader, peer_addr)
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 60, in __init__
+    unused = self.parse(self.unreader)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 271, in parse
+    self.get_data(unreader, buf, stop=True)
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 262, in get_data
+    data = unreader.read()
+           ^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 36, in read
+    d = self.chunk()
+        ^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 63, in chunk
+    return self.sock.recv(self.mxchunk)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-04-27 22:31:01 +0000] [361262] [INFO] Worker exiting (pid: 361262)
+[2025-04-27 22:31:02 +0000] [361377] [INFO] Booting worker with pid: 361377
+[2025-04-27 22:31:46 +0000] [361261] [CRITICAL] WORKER TIMEOUT (pid:361377)
+[2025-04-27 22:31:46 +0000] [361377] [ERROR] Error handling request (no URI read)
+Traceback (most recent call last):
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 133, in handle
+    req = next(parser)
+          ^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/parser.py", line 41, in __next__
+    self.mesg = self.mesg_class(self.cfg, self.unreader, self.source_addr, self.req_count)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 259, in __init__
+    super().__init__(cfg, unreader, peer_addr)
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 60, in __init__
+    unused = self.parse(self.unreader)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 271, in parse
+    self.get_data(unreader, buf, stop=True)
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 262, in get_data
+    data = unreader.read()
+           ^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 36, in read
+    d = self.chunk()
+        ^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 63, in chunk
+    return self.sock.recv(self.mxchunk)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-04-27 22:31:46 +0000] [361377] [INFO] Worker exiting (pid: 361377)
+[2025-04-27 22:31:46 +0000] [361440] [INFO] Booting worker with pid: 361440
+[2025-04-27 22:33:26 +0000] [361261] [INFO] Handling signal: term
+[2025-04-27 22:33:26 +0000] [361440] [INFO] Worker exiting (pid: 361440)
+[2025-04-27 22:33:26 +0000] [361261] [INFO] Shutting down: Master
+[2025-04-27 22:34:51 +0000] [361786] [INFO] Starting gunicorn 23.0.0
+[2025-04-27 22:34:51 +0000] [361786] [INFO] Listening at: http://0.0.0.0:5000 (361786)
+[2025-04-27 22:34:51 +0000] [361786] [INFO] Using worker: sync
+[2025-04-27 22:34:51 +0000] [361789] [INFO] Booting worker with pid: 361789
+[2025-04-27 22:36:52 +0000] [361786] [INFO] Handling signal: int
+[2025-04-27 22:36:52 +0000] [361789] [INFO] Worker exiting (pid: 361789)
+[2025-04-27 22:36:52 +0000] [361786] [INFO] Shutting down: Master
+[2025-04-27 22:37:00 +0000] [362078] [INFO] Starting gunicorn 23.0.0
+[2025-04-27 22:37:00 +0000] [362078] [INFO] Listening at: http://0.0.0.0:5000 (362078)
+[2025-04-27 22:37:00 +0000] [362078] [INFO] Using worker: sync
+[2025-04-27 22:37:00 +0000] [362081] [INFO] Booting worker with pid: 362081
+[2025-04-27 22:37:03 +0000] [362078] [INFO] Handling signal: hup
+[2025-04-27 22:37:03 +0000] [362078] [INFO] Hang up: Master
+[2025-04-27 22:37:03 +0000] [362078] [ERROR] Worker (pid:362081) was sent SIGHUP!
+[2025-04-27 22:37:03 +0000] [362085] [INFO] Booting worker with pid: 362085
+[2025-04-27 23:36:09 +0000] [362078] [CRITICAL] WORKER TIMEOUT (pid:362085)
+[2025-04-27 23:36:09 +0000] [362085] [ERROR] Error handling request (no URI read)
+Traceback (most recent call last):
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 133, in handle
+    req = next(parser)
+          ^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/parser.py", line 41, in __next__
+    self.mesg = self.mesg_class(self.cfg, self.unreader, self.source_addr, self.req_count)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 259, in __init__
+    super().__init__(cfg, unreader, peer_addr)
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 60, in __init__
+    unused = self.parse(self.unreader)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 271, in parse
+    self.get_data(unreader, buf, stop=True)
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 262, in get_data
+    data = unreader.read()
+           ^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 36, in read
+    d = self.chunk()
+        ^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 63, in chunk
+    return self.sock.recv(self.mxchunk)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-04-27 23:36:09 +0000] [362085] [INFO] Worker exiting (pid: 362085)
+[2025-04-27 23:36:09 +0000] [370302] [INFO] Booting worker with pid: 370302
+[2025-04-28 09:44:43 +0000] [370302] [WARNING] Invalid request from ip=162.142.125.113: Invalid HTTP Version: (2, 0)
+[2025-04-28 11:38:17 +0000] [370302] [WARNING] Invalid request from ip=167.94.146.52: Invalid HTTP Version: (2, 0)
+[2025-04-28 12:55:29 +0000] [362078] [CRITICAL] WORKER TIMEOUT (pid:370302)
+[2025-04-28 12:55:29 +0000] [370302] [ERROR] Error handling request (no URI read)
+Traceback (most recent call last):
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 133, in handle
+    req = next(parser)
+          ^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/parser.py", line 41, in __next__
+    self.mesg = self.mesg_class(self.cfg, self.unreader, self.source_addr, self.req_count)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 259, in __init__
+    super().__init__(cfg, unreader, peer_addr)
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 60, in __init__
+    unused = self.parse(self.unreader)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 271, in parse
+    self.get_data(unreader, buf, stop=True)
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 262, in get_data
+    data = unreader.read()
+           ^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 36, in read
+    d = self.chunk()
+        ^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 63, in chunk
+    return self.sock.recv(self.mxchunk)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-04-28 12:55:29 +0000] [370302] [INFO] Worker exiting (pid: 370302)
+[2025-04-28 12:55:30 +0000] [481500] [INFO] Booting worker with pid: 481500
+[2025-04-28 12:57:06 +0000] [362078] [CRITICAL] WORKER TIMEOUT (pid:481500)
+[2025-04-28 12:57:06 +0000] [481500] [ERROR] Error handling request (no URI read)
+Traceback (most recent call last):
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 133, in handle
+    req = next(parser)
+          ^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/parser.py", line 41, in __next__
+    self.mesg = self.mesg_class(self.cfg, self.unreader, self.source_addr, self.req_count)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 259, in __init__
+    super().__init__(cfg, unreader, peer_addr)
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 60, in __init__
+    unused = self.parse(self.unreader)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 271, in parse
+    self.get_data(unreader, buf, stop=True)
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 262, in get_data
+    data = unreader.read()
+           ^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 36, in read
+    d = self.chunk()
+        ^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 63, in chunk
+    return self.sock.recv(self.mxchunk)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-04-28 12:57:06 +0000] [481500] [INFO] Worker exiting (pid: 481500)
+[2025-04-28 12:57:06 +0000] [481758] [INFO] Booting worker with pid: 481758
+[2025-04-28 13:00:40 +0000] [362078] [CRITICAL] WORKER TIMEOUT (pid:481758)
+[2025-04-28 13:00:40 +0000] [481758] [ERROR] Error handling request (no URI read)
+Traceback (most recent call last):
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 133, in handle
+    req = next(parser)
+          ^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/parser.py", line 41, in __next__
+    self.mesg = self.mesg_class(self.cfg, self.unreader, self.source_addr, self.req_count)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 259, in __init__
+    super().__init__(cfg, unreader, peer_addr)
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 60, in __init__
+    unused = self.parse(self.unreader)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 271, in parse
+    self.get_data(unreader, buf, stop=True)
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 262, in get_data
+    data = unreader.read()
+           ^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 36, in read
+    d = self.chunk()
+        ^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 63, in chunk
+    return self.sock.recv(self.mxchunk)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-04-28 13:00:40 +0000] [481758] [INFO] Worker exiting (pid: 481758)
+[2025-04-28 13:00:40 +0000] [482195] [INFO] Booting worker with pid: 482195
+[2025-04-28 13:07:12 +0000] [362078] [CRITICAL] WORKER TIMEOUT (pid:482195)
+[2025-04-28 13:07:12 +0000] [482195] [ERROR] Error handling request (no URI read)
+Traceback (most recent call last):
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 133, in handle
+    req = next(parser)
+          ^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/parser.py", line 41, in __next__
+    self.mesg = self.mesg_class(self.cfg, self.unreader, self.source_addr, self.req_count)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 259, in __init__
+    super().__init__(cfg, unreader, peer_addr)
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 60, in __init__
+    unused = self.parse(self.unreader)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 271, in parse
+    self.get_data(unreader, buf, stop=True)
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 262, in get_data
+    data = unreader.read()
+           ^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 36, in read
+    d = self.chunk()
+        ^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 63, in chunk
+    return self.sock.recv(self.mxchunk)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-04-28 13:07:12 +0000] [482195] [INFO] Worker exiting (pid: 482195)
+[2025-04-28 13:07:12 +0000] [482981] [INFO] Booting worker with pid: 482981
+[2025-04-28 13:08:27 +0000] [362078] [CRITICAL] WORKER TIMEOUT (pid:482981)
+[2025-04-28 13:08:27 +0000] [482981] [ERROR] Error handling request (no URI read)
+Traceback (most recent call last):
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 133, in handle
+    req = next(parser)
+          ^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/parser.py", line 41, in __next__
+    self.mesg = self.mesg_class(self.cfg, self.unreader, self.source_addr, self.req_count)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 259, in __init__
+    super().__init__(cfg, unreader, peer_addr)
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 60, in __init__
+    unused = self.parse(self.unreader)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 271, in parse
+    self.get_data(unreader, buf, stop=True)
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 262, in get_data
+    data = unreader.read()
+           ^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 36, in read
+    d = self.chunk()
+        ^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 63, in chunk
+    return self.sock.recv(self.mxchunk)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-04-28 13:08:27 +0000] [482981] [INFO] Worker exiting (pid: 482981)
+[2025-04-28 13:08:27 +0000] [483103] [INFO] Booting worker with pid: 483103
+[2025-04-28 13:39:53 +0000] [362078] [CRITICAL] WORKER TIMEOUT (pid:483103)
+[2025-04-28 13:39:53 +0000] [483103] [ERROR] Error handling request (no URI read)
+Traceback (most recent call last):
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 133, in handle
+    req = next(parser)
+          ^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/parser.py", line 41, in __next__
+    self.mesg = self.mesg_class(self.cfg, self.unreader, self.source_addr, self.req_count)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 259, in __init__
+    super().__init__(cfg, unreader, peer_addr)
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 60, in __init__
+    unused = self.parse(self.unreader)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 271, in parse
+    self.get_data(unreader, buf, stop=True)
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 262, in get_data
+    data = unreader.read()
+           ^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 36, in read
+    d = self.chunk()
+        ^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 63, in chunk
+    return self.sock.recv(self.mxchunk)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-04-28 13:39:53 +0000] [483103] [INFO] Worker exiting (pid: 483103)
+[2025-04-28 13:39:53 +0000] [487061] [INFO] Booting worker with pid: 487061
+[2025-04-28 14:01:00 +0000] [362078] [INFO] Handling signal: term
+[2025-04-28 14:01:00 +0000] [487061] [INFO] Worker exiting (pid: 487061)
+[2025-04-28 14:01:00 +0000] [362078] [INFO] Shutting down: Master
+[2025-04-28 14:01:15 +0000] [490930] [INFO] Starting gunicorn 23.0.0
+[2025-04-28 14:01:15 +0000] [490930] [INFO] Listening at: http://0.0.0.0:5000 (490930)
+[2025-04-28 14:01:15 +0000] [490930] [INFO] Using worker: sync
+[2025-04-28 14:01:15 +0000] [490931] [INFO] Booting worker with pid: 490931
+[2025-04-28 14:43:15 +0000] [490930] [CRITICAL] WORKER TIMEOUT (pid:490931)
+[2025-04-28 14:43:15 +0000] [490931] [ERROR] Error handling request (no URI read)
+Traceback (most recent call last):
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 133, in handle
+    req = next(parser)
+          ^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/parser.py", line 41, in __next__
+    self.mesg = self.mesg_class(self.cfg, self.unreader, self.source_addr, self.req_count)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 259, in __init__
+    super().__init__(cfg, unreader, peer_addr)
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 60, in __init__
+    unused = self.parse(self.unreader)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 271, in parse
+    self.get_data(unreader, buf, stop=True)
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 262, in get_data
+    data = unreader.read()
+           ^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 36, in read
+    d = self.chunk()
+        ^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 63, in chunk
+    return self.sock.recv(self.mxchunk)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-04-28 14:43:15 +0000] [490931] [INFO] Worker exiting (pid: 490931)
+[2025-04-28 14:43:15 +0000] [496886] [INFO] Booting worker with pid: 496886
+[2025-04-28 14:50:39 +0000] [490930] [CRITICAL] WORKER TIMEOUT (pid:496886)
+[2025-04-28 14:50:39 +0000] [496886] [ERROR] Error handling request (no URI read)
+Traceback (most recent call last):
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 133, in handle
+    req = next(parser)
+          ^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/parser.py", line 41, in __next__
+    self.mesg = self.mesg_class(self.cfg, self.unreader, self.source_addr, self.req_count)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 259, in __init__
+    super().__init__(cfg, unreader, peer_addr)
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 60, in __init__
+    unused = self.parse(self.unreader)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 271, in parse
+    self.get_data(unreader, buf, stop=True)
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 262, in get_data
+    data = unreader.read()
+           ^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 36, in read
+    d = self.chunk()
+        ^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 63, in chunk
+    return self.sock.recv(self.mxchunk)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-04-28 14:50:39 +0000] [496886] [INFO] Worker exiting (pid: 496886)
+[2025-04-28 14:50:39 +0000] [498585] [INFO] Booting worker with pid: 498585
+[2025-04-28 14:51:28 +0000] [490930] [CRITICAL] WORKER TIMEOUT (pid:498585)
+[2025-04-28 14:51:28 +0000] [498585] [ERROR] Error handling request (no URI read)
+Traceback (most recent call last):
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 133, in handle
+    req = next(parser)
+          ^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/parser.py", line 41, in __next__
+    self.mesg = self.mesg_class(self.cfg, self.unreader, self.source_addr, self.req_count)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 259, in __init__
+    super().__init__(cfg, unreader, peer_addr)
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 60, in __init__
+    unused = self.parse(self.unreader)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 271, in parse
+    self.get_data(unreader, buf, stop=True)
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 262, in get_data
+    data = unreader.read()
+           ^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 36, in read
+    d = self.chunk()
+        ^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 63, in chunk
+    return self.sock.recv(self.mxchunk)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-04-28 14:51:28 +0000] [498585] [INFO] Worker exiting (pid: 498585)
+[2025-04-28 14:51:28 +0000] [498656] [INFO] Booting worker with pid: 498656
+[2025-04-28 14:52:59 +0000] [490930] [CRITICAL] WORKER TIMEOUT (pid:498656)
+[2025-04-28 14:52:59 +0000] [498656] [ERROR] Error handling request (no URI read)
+Traceback (most recent call last):
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 133, in handle
+    req = next(parser)
+          ^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/parser.py", line 41, in __next__
+    self.mesg = self.mesg_class(self.cfg, self.unreader, self.source_addr, self.req_count)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 259, in __init__
+    super().__init__(cfg, unreader, peer_addr)
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 60, in __init__
+    unused = self.parse(self.unreader)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 271, in parse
+    self.get_data(unreader, buf, stop=True)
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 262, in get_data
+    data = unreader.read()
+           ^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 36, in read
+    d = self.chunk()
+        ^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 63, in chunk
+    return self.sock.recv(self.mxchunk)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-04-28 14:52:59 +0000] [498656] [INFO] Worker exiting (pid: 498656)
+[2025-04-28 14:52:59 +0000] [498827] [INFO] Booting worker with pid: 498827
+[2025-04-28 14:54:19 +0000] [498827] [WARNING] Invalid request from ip=3.16.130.153: Invalid HTTP request line: 'SSH-2.0-Go'
+[2025-04-28 14:55:29 +0000] [490930] [CRITICAL] WORKER TIMEOUT (pid:498827)
+[2025-04-28 14:55:29 +0000] [498827] [ERROR] Error handling request (no URI read)
+Traceback (most recent call last):
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 133, in handle
+    req = next(parser)
+          ^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/parser.py", line 41, in __next__
+    self.mesg = self.mesg_class(self.cfg, self.unreader, self.source_addr, self.req_count)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 259, in __init__
+    super().__init__(cfg, unreader, peer_addr)
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 60, in __init__
+    unused = self.parse(self.unreader)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 271, in parse
+    self.get_data(unreader, buf, stop=True)
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 262, in get_data
+    data = unreader.read()
+           ^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 36, in read
+    d = self.chunk()
+        ^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 63, in chunk
+    return self.sock.recv(self.mxchunk)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-04-28 14:55:29 +0000] [498827] [INFO] Worker exiting (pid: 498827)
+[2025-04-28 14:55:29 +0000] [499118] [INFO] Booting worker with pid: 499118
+[2025-04-28 15:06:48 +0000] [490930] [CRITICAL] WORKER TIMEOUT (pid:499118)
+[2025-04-28 15:06:48 +0000] [499118] [ERROR] Error handling request (no URI read)
+Traceback (most recent call last):
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 133, in handle
+    req = next(parser)
+          ^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/parser.py", line 41, in __next__
+    self.mesg = self.mesg_class(self.cfg, self.unreader, self.source_addr, self.req_count)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 259, in __init__
+    super().__init__(cfg, unreader, peer_addr)
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 60, in __init__
+    unused = self.parse(self.unreader)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 271, in parse
+    self.get_data(unreader, buf, stop=True)
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 262, in get_data
+    data = unreader.read()
+           ^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 36, in read
+    d = self.chunk()
+        ^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 63, in chunk
+    return self.sock.recv(self.mxchunk)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-04-28 15:06:48 +0000] [499118] [INFO] Worker exiting (pid: 499118)
+[2025-04-28 15:06:48 +0000] [500520] [INFO] Booting worker with pid: 500520
+[2025-04-28 15:09:37 +0000] [490930] [CRITICAL] WORKER TIMEOUT (pid:500520)
+[2025-04-28 15:09:37 +0000] [500520] [ERROR] Error handling request (no URI read)
+Traceback (most recent call last):
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 133, in handle
+    req = next(parser)
+          ^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/parser.py", line 41, in __next__
+    self.mesg = self.mesg_class(self.cfg, self.unreader, self.source_addr, self.req_count)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 259, in __init__
+    super().__init__(cfg, unreader, peer_addr)
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 60, in __init__
+    unused = self.parse(self.unreader)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 271, in parse
+    self.get_data(unreader, buf, stop=True)
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 262, in get_data
+    data = unreader.read()
+           ^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 36, in read
+    d = self.chunk()
+        ^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 63, in chunk
+    return self.sock.recv(self.mxchunk)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-04-28 15:09:37 +0000] [500520] [INFO] Worker exiting (pid: 500520)
+[2025-04-28 15:09:37 +0000] [500882] [INFO] Booting worker with pid: 500882
+[2025-04-28 15:21:42 +0000] [490930] [CRITICAL] WORKER TIMEOUT (pid:500882)
+[2025-04-28 15:21:42 +0000] [500882] [ERROR] Error handling request (no URI read)
+Traceback (most recent call last):
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 133, in handle
+    req = next(parser)
+          ^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/parser.py", line 41, in __next__
+    self.mesg = self.mesg_class(self.cfg, self.unreader, self.source_addr, self.req_count)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 259, in __init__
+    super().__init__(cfg, unreader, peer_addr)
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 60, in __init__
+    unused = self.parse(self.unreader)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 271, in parse
+    self.get_data(unreader, buf, stop=True)
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 262, in get_data
+    data = unreader.read()
+           ^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 36, in read
+    d = self.chunk()
+        ^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 63, in chunk
+    return self.sock.recv(self.mxchunk)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-04-28 15:21:42 +0000] [500882] [INFO] Worker exiting (pid: 500882)
+[2025-04-28 15:21:42 +0000] [502550] [INFO] Booting worker with pid: 502550
+[2025-04-28 15:31:01 +0000] [490930] [INFO] Handling signal: term
+[2025-04-28 15:31:01 +0000] [502550] [INFO] Worker exiting (pid: 502550)
+[2025-04-28 15:31:01 +0000] [490930] [INFO] Shutting down: Master
+[2025-04-28 15:31:08 +0000] [503985] [INFO] Starting gunicorn 23.0.0
+[2025-04-28 15:31:08 +0000] [503985] [INFO] Listening at: http://0.0.0.0:5000 (503985)
+[2025-04-28 15:31:08 +0000] [503985] [INFO] Using worker: sync
+[2025-04-28 15:31:08 +0000] [503986] [INFO] Booting worker with pid: 503986
+[2025-04-28 15:45:19 +0000] [503985] [INFO] Handling signal: term
+[2025-04-28 15:45:19 +0000] [503986] [INFO] Worker exiting (pid: 503986)
+[2025-04-28 15:45:19 +0000] [503985] [INFO] Shutting down: Master
+[2025-04-28 15:45:22 +0000] [505880] [INFO] Starting gunicorn 23.0.0
+[2025-04-28 15:45:22 +0000] [505880] [INFO] Listening at: http://0.0.0.0:5000 (505880)
+[2025-04-28 15:45:22 +0000] [505880] [INFO] Using worker: sync
+[2025-04-28 15:45:22 +0000] [505881] [INFO] Booting worker with pid: 505881
+[2025-04-28 16:03:07 +0000] [505880] [INFO] Handling signal: term
+[2025-04-28 16:03:07 +0000] [505881] [INFO] Worker exiting (pid: 505881)
+[2025-04-28 16:03:07 +0000] [505880] [INFO] Shutting down: Master
+[2025-04-28 16:03:12 +0000] [508919] [INFO] Starting gunicorn 23.0.0
+[2025-04-28 16:03:12 +0000] [508919] [INFO] Listening at: http://0.0.0.0:5000 (508919)
+[2025-04-28 16:03:12 +0000] [508919] [INFO] Using worker: sync
+[2025-04-28 16:03:12 +0000] [508920] [INFO] Booting worker with pid: 508920
+[2025-04-28 16:07:58 +0000] [508919] [CRITICAL] WORKER TIMEOUT (pid:508920)
+[2025-04-28 16:07:58 +0000] [508920] [ERROR] Error handling request (no URI read)
+Traceback (most recent call last):
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 133, in handle
+    req = next(parser)
+          ^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/parser.py", line 41, in __next__
+    self.mesg = self.mesg_class(self.cfg, self.unreader, self.source_addr, self.req_count)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 259, in __init__
+    super().__init__(cfg, unreader, peer_addr)
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 60, in __init__
+    unused = self.parse(self.unreader)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 271, in parse
+    self.get_data(unreader, buf, stop=True)
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 262, in get_data
+    data = unreader.read()
+           ^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 36, in read
+    d = self.chunk()
+        ^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 63, in chunk
+    return self.sock.recv(self.mxchunk)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-04-28 16:07:58 +0000] [508920] [INFO] Worker exiting (pid: 508920)
+[2025-04-28 16:07:58 +0000] [509485] [INFO] Booting worker with pid: 509485
+[2025-04-28 16:17:04 +0000] [508919] [CRITICAL] WORKER TIMEOUT (pid:509485)
+[2025-04-28 16:17:04 +0000] [509485] [ERROR] Error handling request (no URI read)
+Traceback (most recent call last):
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 133, in handle
+    req = next(parser)
+          ^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/parser.py", line 41, in __next__
+    self.mesg = self.mesg_class(self.cfg, self.unreader, self.source_addr, self.req_count)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 259, in __init__
+    super().__init__(cfg, unreader, peer_addr)
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 60, in __init__
+    unused = self.parse(self.unreader)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 271, in parse
+    self.get_data(unreader, buf, stop=True)
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 262, in get_data
+    data = unreader.read()
+           ^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 36, in read
+    d = self.chunk()
+        ^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 63, in chunk
+    return self.sock.recv(self.mxchunk)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-04-28 16:17:04 +0000] [509485] [INFO] Worker exiting (pid: 509485)
+[2025-04-28 16:17:04 +0000] [510849] [INFO] Booting worker with pid: 510849
+[2025-04-28 16:18:46 +0000] [508919] [CRITICAL] WORKER TIMEOUT (pid:510849)
+[2025-04-28 16:18:46 +0000] [510849] [ERROR] Error handling request (no URI read)
+Traceback (most recent call last):
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 133, in handle
+    req = next(parser)
+          ^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/parser.py", line 41, in __next__
+    self.mesg = self.mesg_class(self.cfg, self.unreader, self.source_addr, self.req_count)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 259, in __init__
+    super().__init__(cfg, unreader, peer_addr)
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 60, in __init__
+    unused = self.parse(self.unreader)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 271, in parse
+    self.get_data(unreader, buf, stop=True)
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 262, in get_data
+    data = unreader.read()
+           ^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 36, in read
+    d = self.chunk()
+        ^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 63, in chunk
+    return self.sock.recv(self.mxchunk)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-04-28 16:18:46 +0000] [510849] [INFO] Worker exiting (pid: 510849)
+[2025-04-28 16:18:46 +0000] [511034] [INFO] Booting worker with pid: 511034
+[2025-04-28 16:24:20 +0000] [508919] [CRITICAL] WORKER TIMEOUT (pid:511034)
+[2025-04-28 16:24:20 +0000] [511034] [ERROR] Error handling request (no URI read)
+Traceback (most recent call last):
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 133, in handle
+    req = next(parser)
+          ^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/parser.py", line 41, in __next__
+    self.mesg = self.mesg_class(self.cfg, self.unreader, self.source_addr, self.req_count)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 259, in __init__
+    super().__init__(cfg, unreader, peer_addr)
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 60, in __init__
+    unused = self.parse(self.unreader)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 271, in parse
+    self.get_data(unreader, buf, stop=True)
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 262, in get_data
+    data = unreader.read()
+           ^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 36, in read
+    d = self.chunk()
+        ^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 63, in chunk
+    return self.sock.recv(self.mxchunk)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-04-28 16:24:20 +0000] [511034] [INFO] Worker exiting (pid: 511034)
+[2025-04-28 16:24:20 +0000] [511709] [INFO] Booting worker with pid: 511709
+[2025-04-28 16:26:06 +0000] [508919] [CRITICAL] WORKER TIMEOUT (pid:511709)
+[2025-04-28 16:26:06 +0000] [511709] [ERROR] Error handling request (no URI read)
+Traceback (most recent call last):
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 133, in handle
+    req = next(parser)
+          ^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/parser.py", line 41, in __next__
+    self.mesg = self.mesg_class(self.cfg, self.unreader, self.source_addr, self.req_count)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 259, in __init__
+    super().__init__(cfg, unreader, peer_addr)
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 60, in __init__
+    unused = self.parse(self.unreader)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 271, in parse
+    self.get_data(unreader, buf, stop=True)
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 262, in get_data
+    data = unreader.read()
+           ^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 36, in read
+    d = self.chunk()
+        ^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 63, in chunk
+    return self.sock.recv(self.mxchunk)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-04-28 16:26:06 +0000] [511709] [INFO] Worker exiting (pid: 511709)
+[2025-04-28 16:26:06 +0000] [511934] [INFO] Booting worker with pid: 511934
+[2025-04-28 16:57:59 +0000] [508919] [CRITICAL] WORKER TIMEOUT (pid:511934)
+[2025-04-28 16:57:59 +0000] [511934] [ERROR] Error handling request (no URI read)
+Traceback (most recent call last):
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 133, in handle
+    req = next(parser)
+          ^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/parser.py", line 41, in __next__
+    self.mesg = self.mesg_class(self.cfg, self.unreader, self.source_addr, self.req_count)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 259, in __init__
+    super().__init__(cfg, unreader, peer_addr)
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 60, in __init__
+    unused = self.parse(self.unreader)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 271, in parse
+    self.get_data(unreader, buf, stop=True)
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 262, in get_data
+    data = unreader.read()
+           ^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 36, in read
+    d = self.chunk()
+        ^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 63, in chunk
+    return self.sock.recv(self.mxchunk)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-04-28 16:57:59 +0000] [511934] [INFO] Worker exiting (pid: 511934)
+[2025-04-28 16:57:59 +0000] [516452] [INFO] Booting worker with pid: 516452
+[2025-04-28 17:06:24 +0000] [508919] [CRITICAL] WORKER TIMEOUT (pid:516452)
+[2025-04-28 17:06:24 +0000] [516452] [ERROR] Error handling request (no URI read)
+Traceback (most recent call last):
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 133, in handle
+    req = next(parser)
+          ^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/parser.py", line 41, in __next__
+    self.mesg = self.mesg_class(self.cfg, self.unreader, self.source_addr, self.req_count)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 259, in __init__
+    super().__init__(cfg, unreader, peer_addr)
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 60, in __init__
+    unused = self.parse(self.unreader)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 271, in parse
+    self.get_data(unreader, buf, stop=True)
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 262, in get_data
+    data = unreader.read()
+           ^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 36, in read
+    d = self.chunk()
+        ^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 63, in chunk
+    return self.sock.recv(self.mxchunk)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-04-28 17:06:24 +0000] [516452] [INFO] Worker exiting (pid: 516452)
+[2025-04-28 17:06:24 +0000] [517499] [INFO] Booting worker with pid: 517499
+[2025-04-28 17:06:56 +0000] [508919] [CRITICAL] WORKER TIMEOUT (pid:517499)
+[2025-04-28 17:06:56 +0000] [517499] [ERROR] Error handling request (no URI read)
+Traceback (most recent call last):
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 133, in handle
+    req = next(parser)
+          ^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/parser.py", line 41, in __next__
+    self.mesg = self.mesg_class(self.cfg, self.unreader, self.source_addr, self.req_count)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 259, in __init__
+    super().__init__(cfg, unreader, peer_addr)
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 60, in __init__
+    unused = self.parse(self.unreader)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 271, in parse
+    self.get_data(unreader, buf, stop=True)
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 262, in get_data
+    data = unreader.read()
+           ^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 36, in read
+    d = self.chunk()
+        ^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 63, in chunk
+    return self.sock.recv(self.mxchunk)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-04-28 17:06:56 +0000] [517499] [INFO] Worker exiting (pid: 517499)
+[2025-04-28 17:06:56 +0000] [517559] [INFO] Booting worker with pid: 517559
+[2025-04-28 17:07:50 +0000] [508919] [CRITICAL] WORKER TIMEOUT (pid:517559)
+[2025-04-28 17:07:50 +0000] [517559] [ERROR] Error handling request (no URI read)
+Traceback (most recent call last):
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 133, in handle
+    req = next(parser)
+          ^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/parser.py", line 41, in __next__
+    self.mesg = self.mesg_class(self.cfg, self.unreader, self.source_addr, self.req_count)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 259, in __init__
+    super().__init__(cfg, unreader, peer_addr)
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 60, in __init__
+    unused = self.parse(self.unreader)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 271, in parse
+    self.get_data(unreader, buf, stop=True)
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 262, in get_data
+    data = unreader.read()
+           ^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 36, in read
+    d = self.chunk()
+        ^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 63, in chunk
+    return self.sock.recv(self.mxchunk)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-04-28 17:07:50 +0000] [517559] [INFO] Worker exiting (pid: 517559)
+[2025-04-28 17:07:50 +0000] [517680] [INFO] Booting worker with pid: 517680
+[2025-04-28 17:12:43 +0000] [508919] [CRITICAL] WORKER TIMEOUT (pid:517680)
+[2025-04-28 17:12:43 +0000] [517680] [ERROR] Error handling request /chat
+Traceback (most recent call last):
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 134, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 177, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/flask/app.py", line 1536, in __call__
+    return self.wsgi_app(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/app.py", line 133, in chat
+    reply = get_response(data["model"], data["context"], data["chat_history"], prompt)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/utils/model_handler.py", line 50, in get_response
+    response = requests.post(url, headers=headers, json=payload)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/requests/api.py", line 115, in post
+    return request("post", url, data=data, json=json, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/urllib3/connectionpool.py", line 534, in _make_request
+    response = conn.getresponse()
+               ^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/urllib3/connection.py", line 516, in getresponse
+    httplib_response = super().getresponse()
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/http/client.py", line 1428, in getresponse
+    response.begin()
+  File "/usr/lib/python3.12/http/client.py", line 331, in begin
+    version, status, reason = self._read_status()
+                              ^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/http/client.py", line 292, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/socket.py", line 707, in readinto
+    return self._sock.recv_into(b)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/ssl.py", line 1252, in recv_into
+    return self.read(nbytes, buffer)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/ssl.py", line 1104, in read
+    return self._sslobj.read(len, buffer)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-04-28 17:12:43 +0000] [517680] [INFO] Worker exiting (pid: 517680)
+[2025-04-28 17:12:43 +0000] [518327] [INFO] Booting worker with pid: 518327
+[2025-04-28 17:13:14 +0000] [508919] [CRITICAL] WORKER TIMEOUT (pid:518327)
+[2025-04-28 17:13:14 +0000] [518327] [ERROR] Error handling request (no URI read)
+Traceback (most recent call last):
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 133, in handle
+    req = next(parser)
+          ^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/parser.py", line 41, in __next__
+    self.mesg = self.mesg_class(self.cfg, self.unreader, self.source_addr, self.req_count)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 259, in __init__
+    super().__init__(cfg, unreader, peer_addr)
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 60, in __init__
+    unused = self.parse(self.unreader)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 271, in parse
+    self.get_data(unreader, buf, stop=True)
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 262, in get_data
+    data = unreader.read()
+           ^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 36, in read
+    d = self.chunk()
+        ^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 63, in chunk
+    return self.sock.recv(self.mxchunk)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-04-28 17:13:14 +0000] [518327] [INFO] Worker exiting (pid: 518327)
+[2025-04-28 17:13:14 +0000] [518418] [INFO] Booting worker with pid: 518418
+[2025-04-28 17:53:09 +0000] [508919] [CRITICAL] WORKER TIMEOUT (pid:518418)
+[2025-04-28 17:53:09 +0000] [518418] [ERROR] Error handling request (no URI read)
+Traceback (most recent call last):
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 133, in handle
+    req = next(parser)
+          ^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/parser.py", line 41, in __next__
+    self.mesg = self.mesg_class(self.cfg, self.unreader, self.source_addr, self.req_count)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 259, in __init__
+    super().__init__(cfg, unreader, peer_addr)
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 60, in __init__
+    unused = self.parse(self.unreader)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 271, in parse
+    self.get_data(unreader, buf, stop=True)
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 262, in get_data
+    data = unreader.read()
+           ^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 36, in read
+    d = self.chunk()
+        ^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 63, in chunk
+    return self.sock.recv(self.mxchunk)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-04-28 17:53:09 +0000] [518418] [INFO] Worker exiting (pid: 518418)
+[2025-04-28 17:53:09 +0000] [524188] [INFO] Booting worker with pid: 524188
+[2025-04-28 17:55:56 +0000] [508919] [CRITICAL] WORKER TIMEOUT (pid:524188)
+[2025-04-28 17:55:56 +0000] [524188] [ERROR] Error handling request (no URI read)
+Traceback (most recent call last):
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 133, in handle
+    req = next(parser)
+          ^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/parser.py", line 41, in __next__
+    self.mesg = self.mesg_class(self.cfg, self.unreader, self.source_addr, self.req_count)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 259, in __init__
+    super().__init__(cfg, unreader, peer_addr)
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 60, in __init__
+    unused = self.parse(self.unreader)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 271, in parse
+    self.get_data(unreader, buf, stop=True)
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 262, in get_data
+    data = unreader.read()
+           ^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 36, in read
+    d = self.chunk()
+        ^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 63, in chunk
+    return self.sock.recv(self.mxchunk)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-04-28 17:55:56 +0000] [524188] [INFO] Worker exiting (pid: 524188)
+[2025-04-28 17:55:56 +0000] [524491] [INFO] Booting worker with pid: 524491
+[2025-04-28 17:56:44 +0000] [508919] [CRITICAL] WORKER TIMEOUT (pid:524491)
+[2025-04-28 17:56:44 +0000] [524491] [ERROR] Error handling request (no URI read)
+Traceback (most recent call last):
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 133, in handle
+    req = next(parser)
+          ^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/parser.py", line 41, in __next__
+    self.mesg = self.mesg_class(self.cfg, self.unreader, self.source_addr, self.req_count)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 259, in __init__
+    super().__init__(cfg, unreader, peer_addr)
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 60, in __init__
+    unused = self.parse(self.unreader)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 271, in parse
+    self.get_data(unreader, buf, stop=True)
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 262, in get_data
+    data = unreader.read()
+           ^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 36, in read
+    d = self.chunk()
+        ^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 63, in chunk
+    return self.sock.recv(self.mxchunk)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-04-28 17:56:44 +0000] [524491] [INFO] Worker exiting (pid: 524491)
+[2025-04-28 17:56:44 +0000] [524595] [INFO] Booting worker with pid: 524595
+[2025-04-28 17:59:45 +0000] [508919] [CRITICAL] WORKER TIMEOUT (pid:524595)
+[2025-04-28 17:59:45 +0000] [524595] [ERROR] Error handling request (no URI read)
+Traceback (most recent call last):
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 133, in handle
+    req = next(parser)
+          ^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/parser.py", line 41, in __next__
+    self.mesg = self.mesg_class(self.cfg, self.unreader, self.source_addr, self.req_count)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 259, in __init__
+    super().__init__(cfg, unreader, peer_addr)
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 60, in __init__
+    unused = self.parse(self.unreader)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 271, in parse
+    self.get_data(unreader, buf, stop=True)
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 262, in get_data
+    data = unreader.read()
+           ^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 36, in read
+    d = self.chunk()
+        ^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 63, in chunk
+    return self.sock.recv(self.mxchunk)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-04-28 17:59:45 +0000] [524595] [INFO] Worker exiting (pid: 524595)
+[2025-04-28 17:59:46 +0000] [524948] [INFO] Booting worker with pid: 524948
+[2025-04-28 18:00:45 +0000] [508919] [CRITICAL] WORKER TIMEOUT (pid:524948)
+[2025-04-28 18:00:45 +0000] [524948] [ERROR] Error handling request (no URI read)
+Traceback (most recent call last):
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 133, in handle
+    req = next(parser)
+          ^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/parser.py", line 41, in __next__
+    self.mesg = self.mesg_class(self.cfg, self.unreader, self.source_addr, self.req_count)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 259, in __init__
+    super().__init__(cfg, unreader, peer_addr)
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 60, in __init__
+    unused = self.parse(self.unreader)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 271, in parse
+    self.get_data(unreader, buf, stop=True)
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 262, in get_data
+    data = unreader.read()
+           ^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 36, in read
+    d = self.chunk()
+        ^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 63, in chunk
+    return self.sock.recv(self.mxchunk)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-04-28 18:00:45 +0000] [524948] [INFO] Worker exiting (pid: 524948)
+[2025-04-28 18:00:45 +0000] [525124] [INFO] Booting worker with pid: 525124
+[2025-04-28 23:03:27 +0000] [525124] [WARNING] Invalid request from ip=147.45.112.101: Invalid HTTP request line: '\x03\x00\x00/*à\x00\x00\x00\x00\x00Cookie: mstshash=Administr'
+[2025-04-29 06:49:10 +0000] [508919] [INFO] Handling signal: hup
+[2025-04-29 06:49:10 +0000] [508919] [INFO] Hang up: Master
+[2025-04-29 06:49:10 +0000] [631083] [INFO] Booting worker with pid: 631083
+[2025-04-29 06:49:10 +0000] [508919] [ERROR] Worker (pid:525124) was sent SIGHUP!
+[2025-04-29 12:14:34 +0000] [508919] [INFO] Handling signal: term
+[2025-04-29 12:14:34 +0000] [631083] [INFO] Worker exiting (pid: 631083)
+[2025-04-29 12:14:35 +0000] [508919] [INFO] Shutting down: Master
+[2025-04-29 12:14:58 +0000] [676539] [INFO] Starting gunicorn 23.0.0
+[2025-04-29 12:14:58 +0000] [676539] [INFO] Listening at: http://0.0.0.0:5000 (676539)
+[2025-04-29 12:14:58 +0000] [676539] [INFO] Using worker: sync
+[2025-04-29 12:14:58 +0000] [676540] [INFO] Booting worker with pid: 676540
+[2025-04-29 19:04:36 +0000] [676540] [WARNING] Invalid request from ip=118.193.59.142: Invalid HTTP request line: ''
+[2025-04-30 00:13:55 +0000] [676540] [WARNING] Invalid request from ip=193.176.23.4: Invalid HTTP request line: '\x03\x00\x00/*à\x00\x00\x00\x00\x00Cookie: mstshash=Administr'
+[2025-04-30 00:39:52 +0000] [676540] [WARNING] Invalid request from ip=167.94.145.101: Invalid HTTP Version: (2, 0)
+[2025-04-30 01:13:05 +0000] [676540] [WARNING] Invalid request from ip=193.176.23.4: Invalid HTTP request line: '\x03\x00\x00/*à\x00\x00\x00\x00\x00Cookie: mstshash=Administr'
+[2025-04-30 02:25:05 +0000] [676539] [CRITICAL] WORKER TIMEOUT (pid:676540)
+[2025-04-30 02:25:05 +0000] [676540] [ERROR] Error handling request (no URI read)
+Traceback (most recent call last):
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 133, in handle
+    req = next(parser)
+          ^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/parser.py", line 41, in __next__
+    self.mesg = self.mesg_class(self.cfg, self.unreader, self.source_addr, self.req_count)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 259, in __init__
+    super().__init__(cfg, unreader, peer_addr)
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 60, in __init__
+    unused = self.parse(self.unreader)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 274, in parse
+    line, rbuf = self.read_line(unreader, buf, self.limit_request_line)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 326, in read_line
+    self.get_data(unreader, buf)
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 262, in get_data
+    data = unreader.read()
+           ^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 36, in read
+    d = self.chunk()
+        ^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 63, in chunk
+    return self.sock.recv(self.mxchunk)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-04-30 02:25:05 +0000] [676540] [INFO] Worker exiting (pid: 676540)
+[2025-04-30 02:25:05 +0000] [793149] [INFO] Booting worker with pid: 793149
+[2025-04-30 05:48:40 +0000] [676539] [INFO] Handling signal: hup
+[2025-04-30 05:48:40 +0000] [676539] [INFO] Hang up: Master
+[2025-04-30 05:48:40 +0000] [676539] [ERROR] Worker (pid:793149) was sent SIGHUP!
+[2025-04-30 05:48:40 +0000] [821404] [INFO] Booting worker with pid: 821404
+[2025-04-30 16:20:02 +0000] [821404] [WARNING] Invalid request from ip=81.29.140.28: Invalid HTTP request line: '\x03\x00\x00&!à\x00\x00þÊ\x00Cookie: mstshash='
+[2025-04-30 16:20:02 +0000] [821404] [WARNING] Invalid request from ip=81.29.140.28: Invalid HTTP request line: 'SSH-2.0-Go'
+[2025-04-30 16:20:02 +0000] [821404] [WARNING] Invalid request from ip=81.29.140.28: Invalid HTTP Version: 'RTSP/1.0'
+[2025-04-30 17:57:36 +0000] [821404] [WARNING] Invalid request from ip=142.93.105.170: Invalid HTTP request line: ''
+[2025-04-30 18:20:07 +0000] [821404] [WARNING] Invalid request from ip=3.144.97.11: Invalid HTTP request line: 'SSH-2.0-Go'
+[2025-04-30 22:32:33 +0000] [821404] [WARNING] Invalid request from ip=4.150.11.246: Invalid HTTP request line: ''
+[2025-05-01 10:46:58 +0000] [821404] [WARNING] Invalid request from ip=167.94.146.52: Invalid HTTP Version: (2, 0)
+[2025-05-01 16:20:40 +0000] [676539] [CRITICAL] WORKER TIMEOUT (pid:821404)
+[2025-05-01 16:20:40 +0000] [821404] [ERROR] Error handling request /chat
+Traceback (most recent call last):
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 134, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 177, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/flask/app.py", line 1536, in __call__
+    return self.wsgi_app(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/app.py", line 133, in chat
+    reply = get_response(data["model"], data["context"], data["chat_history"], prompt)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/utils/model_handler.py", line 71, in get_response
+    response = requests.post(url, headers=headers, json=payload)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/requests/api.py", line 115, in post
+    return request("post", url, data=data, json=json, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/urllib3/connectionpool.py", line 534, in _make_request
+    response = conn.getresponse()
+               ^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/urllib3/connection.py", line 516, in getresponse
+    httplib_response = super().getresponse()
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/http/client.py", line 1428, in getresponse
+    response.begin()
+  File "/usr/lib/python3.12/http/client.py", line 331, in begin
+    version, status, reason = self._read_status()
+                              ^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/http/client.py", line 292, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/socket.py", line 707, in readinto
+    return self._sock.recv_into(b)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/ssl.py", line 1252, in recv_into
+    return self.read(nbytes, buffer)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/ssl.py", line 1104, in read
+    return self._sslobj.read(len, buffer)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-05-01 16:20:40 +0000] [821404] [INFO] Worker exiting (pid: 821404)
+[2025-05-01 16:20:40 +0000] [1106402] [INFO] Booting worker with pid: 1106402
+[2025-05-01 16:21:32 +0000] [676539] [CRITICAL] WORKER TIMEOUT (pid:1106402)
+[2025-05-01 16:21:32 +0000] [1106402] [ERROR] Error handling request (no URI read)
+Traceback (most recent call last):
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 133, in handle
+    req = next(parser)
+          ^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/parser.py", line 41, in __next__
+    self.mesg = self.mesg_class(self.cfg, self.unreader, self.source_addr, self.req_count)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 259, in __init__
+    super().__init__(cfg, unreader, peer_addr)
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 60, in __init__
+    unused = self.parse(self.unreader)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 271, in parse
+    self.get_data(unreader, buf, stop=True)
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 262, in get_data
+    data = unreader.read()
+           ^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 36, in read
+    d = self.chunk()
+        ^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 63, in chunk
+    return self.sock.recv(self.mxchunk)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-05-01 16:21:32 +0000] [1106402] [INFO] Worker exiting (pid: 1106402)
+[2025-05-01 16:21:32 +0000] [1106513] [INFO] Booting worker with pid: 1106513
+[2025-05-01 16:23:59 +0000] [676539] [CRITICAL] WORKER TIMEOUT (pid:1106513)
+[2025-05-01 16:23:59 +0000] [1106513] [ERROR] Error handling request (no URI read)
+Traceback (most recent call last):
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 133, in handle
+    req = next(parser)
+          ^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/parser.py", line 41, in __next__
+    self.mesg = self.mesg_class(self.cfg, self.unreader, self.source_addr, self.req_count)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 259, in __init__
+    super().__init__(cfg, unreader, peer_addr)
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 60, in __init__
+    unused = self.parse(self.unreader)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 271, in parse
+    self.get_data(unreader, buf, stop=True)
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 262, in get_data
+    data = unreader.read()
+           ^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 36, in read
+    d = self.chunk()
+        ^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 63, in chunk
+    return self.sock.recv(self.mxchunk)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-05-01 16:23:59 +0000] [1106513] [INFO] Worker exiting (pid: 1106513)
+[2025-05-01 16:23:59 +0000] [1106768] [INFO] Booting worker with pid: 1106768
+[2025-05-01 16:39:46 +0000] [676539] [CRITICAL] WORKER TIMEOUT (pid:1106768)
+[2025-05-01 16:39:46 +0000] [1106768] [ERROR] Error handling request (no URI read)
+Traceback (most recent call last):
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 133, in handle
+    req = next(parser)
+          ^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/parser.py", line 41, in __next__
+    self.mesg = self.mesg_class(self.cfg, self.unreader, self.source_addr, self.req_count)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 259, in __init__
+    super().__init__(cfg, unreader, peer_addr)
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 60, in __init__
+    unused = self.parse(self.unreader)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 271, in parse
+    self.get_data(unreader, buf, stop=True)
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 262, in get_data
+    data = unreader.read()
+           ^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 36, in read
+    d = self.chunk()
+        ^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 63, in chunk
+    return self.sock.recv(self.mxchunk)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-05-01 16:39:46 +0000] [1106768] [INFO] Worker exiting (pid: 1106768)
+[2025-05-01 16:39:46 +0000] [1108641] [INFO] Booting worker with pid: 1108641
+[2025-05-01 16:41:00 +0000] [676539] [CRITICAL] WORKER TIMEOUT (pid:1108641)
+[2025-05-01 16:41:00 +0000] [1108641] [ERROR] Error handling request (no URI read)
+Traceback (most recent call last):
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 133, in handle
+    req = next(parser)
+          ^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/parser.py", line 41, in __next__
+    self.mesg = self.mesg_class(self.cfg, self.unreader, self.source_addr, self.req_count)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 259, in __init__
+    super().__init__(cfg, unreader, peer_addr)
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 60, in __init__
+    unused = self.parse(self.unreader)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 271, in parse
+    self.get_data(unreader, buf, stop=True)
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/message.py", line 262, in get_data
+    data = unreader.read()
+           ^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 36, in read
+    d = self.chunk()
+        ^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/http/unreader.py", line 63, in chunk
+    return self.sock.recv(self.mxchunk)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/ddi_msc_v2/env_vm/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-05-01 16:41:00 +0000] [1108641] [INFO] Worker exiting (pid: 1108641)
+[2025-05-01 16:41:00 +0000] [1108822] [INFO] Booting worker with pid: 1108822

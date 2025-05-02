@@ -1,0 +1,28 @@
+{
+    "chat_duration": "3 min 26 sec",
+    "chat_history": [
+        {
+            "response": "Hello! How can I assist you today?",
+            "user": "Hey"
+        },
+        {
+            "response": "Hello! I'd be glad to listen. What's on your mind about what happened earlier today?",
+            "user": "Hey i just wanted to talk about what happened earlier today"
+        },
+        {
+            "response": "I'm sorry to hear that something happened earlier today. If you'd like to talk about it, I'm here to listen.",
+            "user": "Hey i just wanted to talk about what happened earlier today"
+        },
+        {
+            "response": "I'm sorry to hear that you're feeling this way about how you were spoken to in the meeting. Would you like to talk about what happened or explore how to address it?",
+            "user": "It's not just that, it is about how you spoke to me in the meeting"
+        }
+    ],
+    "context": "",
+    "end_time": "2025-05-01 15:24:52",
+    "model": "GPT-4_notfinetuned",
+    "prolific_id": "1234",
+    "questions": 4,
+    "session_id": "529f80ba-48f8-4fbb-9920-d6dacace827d",
+    "start_time": "2025-05-01 15:21:26"
+}

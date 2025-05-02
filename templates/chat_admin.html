@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Chat</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://ichatbot.app/assets/modules/bootstrap/css/bootstrap.min.css">
+  <style>
+    .chat-box {
+      height: 400px;
+      overflow-y: auto;
+      background: #f8f9fa;
+      border: 1px solid #ccc;
+      padding: 15px;
+      border-radius: 6px;
+      margin-bottom: 20px;
+    }
+    .chat-bubble {
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 8px;
+    }
+    .user {
+      background-color: #d1ecf1;
+    }
+    .bot {
+      background-color: #f0f4c3;
+    }
+    #loading-spinner {
+      display: none;
+      text-align: center;
+    }
+  </style>
+  <script>
+    function showSpinner() {
+      document.getElementById('loading-spinner').style.display = 'block';
+    }
+  </script>
+</head>
+<body class="bg-light">
+  <div class="container mt-4">
+    <h3>🛠️ AI Chat - Admin</h3>
+    {% if not session_data %}
+    <form method="POST" class="mb-4">
+      <div class="form-group">
+        <label for="model">Select Model:</label>
+        <select name="model" class="form-control" required>
+          <option value="GPT-4_notfinetuned">GPT-4 (Not Fine-Tuned)</option>
+          <option value="GPT-4o_finetuned">GPT-4o (Fine-Tuned)</option>
+          <option value="LLaMA_finetuned">LLaMA 3.1 (Fine-Tuned)</option>
+          <option value="LLaMA_notfinetuned">LLaMA 3.1 70B (Not Fine-Tuned)</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-success">Start Chat</button>
+    </form>
+    {% endif %}
+
+    {% if session_data %}
+      <p><strong>Model:</strong> {{ session_data.model }}</p>
+
+      <div class="chat-box">
+        {% for chat in session_data.chat_history %}
+          <div class="chat-bubble user"><strong>You:</strong> {{ chat.user }}</div>
+          <div class="chat-bubble bot"><strong>Bailey: </strong><br>{{ chat.response | safe }}</div>
+        {% endfor %}
+      </div>
+
+      <form method="POST" class="d-flex gap-2" onsubmit="showSpinner()">
+        <input type="text" name="message" class="form-control" placeholder="Ask something..." required>
+        <button type="submit" class="btn btn-primary">Send</button>
+      </form>
+
+      <form method="POST" action="/exit" class="mt-2">
+        <button type="submit" class="btn btn-danger">Exit</button>
+      </form>
+
+      <div id="loading-spinner" class="mt-3">
+        <img src="https://i.gifer.com/ZZ5H.gif" width="40" alt="Loading...">
+      </div>
+    {% endif %}
+  </div>
+</body>
+</html>

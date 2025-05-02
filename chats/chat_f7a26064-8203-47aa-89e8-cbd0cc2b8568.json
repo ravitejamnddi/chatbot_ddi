@@ -1,0 +1,16 @@
+{
+    "chat_duration": "812 min 34 sec",
+    "chat_history": [
+        {
+            "response": "\u26a0\ufe0f Error communicating with model: \u26a0\ufe0f Missing environment variables for model: LLaMA_notfinetuned",
+            "user": "Hey"
+        }
+    ],
+    "context": "",
+    "end_time": "2025-05-01 10:16:32",
+    "model": "LLaMA_notfinetuned",
+    "prolific_id": "pk4534423",
+    "questions": 1,
+    "session_id": "f7a26064-8203-47aa-89e8-cbd0cc2b8568",
+    "start_time": "2025-04-30 20:43:58"
+}

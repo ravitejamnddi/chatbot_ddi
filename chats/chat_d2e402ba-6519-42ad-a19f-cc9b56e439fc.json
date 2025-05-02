@@ -1,0 +1,16 @@
+{
+    "chat_duration": "186 min 42 sec",
+    "chat_history": [
+        {
+            "response": "\u26a0\ufe0f Error communicating with model: \u26a0\ufe0f Missing environment variables for model: GPT-4_notfinetuned",
+            "user": "Hey"
+        }
+    ],
+    "context": "",
+    "end_time": "2025-04-30 20:43:55",
+    "model": "GPT-4_notfinetuned",
+    "prolific_id": "pk4534423",
+    "questions": 1,
+    "session_id": "d2e402ba-6519-42ad-a19f-cc9b56e439fc",
+    "start_time": "2025-04-30 17:37:13"
+}
