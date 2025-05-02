@@ -1,0 +1,15 @@
+{
+    "chat_history": [
+        {
+            "user": "what is empathy",
+            "response": "<p><strong>Empathy</strong> is the ability to understand or feel what another person is experiencing from within their frame of reference, that is, the capacity to place oneself in another's position. There are different forms of empathy, including the following:</p>\n\n<ul>\n    <li>\n        <strong>Affective empathy:</strong> This involves the ability to respond with an appropriate emotion to another's mental states. This includes feeling concern for others in distress and experiencing distress in response to perceiving another's pain.\n    </li>\n    <li>\n        <strong>Cognitive empathy:</strong> This refers to the ability to understand another person's perspective or mental state. It is more about thoughts and understanding rather than feelings.\n    </li>\n    <li>\n        <strong>Somatic empathy:</strong> This involves having a physical reaction in response to what someone else is experiencing. For example, feeling the same pain when seeing someone get hurt.\n    </li>\n</ul>\n\n<p>Empathy is considered a crucial aspect of emotional intelligence and is integral in building relationships, understanding others, and fostering compassion and kindness. It is often seen as an essential component of human interaction and social life.</p>"
+        }
+    ],
+    "context": "",
+    "fname": "Prasun",
+    "lname": "Kumar",
+    "model": "GPT-4o",
+    "prolific_id": "pk12345",
+    "questions": 1,
+    "session_id": "06aa7fba-703e-40c1-94ea-6a09fd296a31"
+}

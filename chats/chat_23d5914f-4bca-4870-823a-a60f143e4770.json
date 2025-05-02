@@ -1,0 +1,24 @@
+{
+    "chat_duration": "4 min 20 sec",
+    "chat_history": [
+        {
+            "response": "Hello! How can I assist you today?",
+            "user": "Hi"
+        },
+        {
+            "response": "I'm sorry to hear that I made you feel that way. My intention is to support and assist you. Please let me know how I can help resolve the situation.",
+            "user": "We need to resolve that situation when you said you did not believe in my skills."
+        },
+        {
+            "response": "Dear Team,\n\nI want to sincerely apologize for any inconvenience or misunderstanding I may have caused. It was never my intention to create any frustration, and I deeply regret any impact my actions may have had on your work.\n\nPlease accept my heartfelt apologies. I am committed to learning from this experience and making sure that it does not happen again in the future.\n\nSincerely,\n\n[Your Name]",
+            "user": "You need to excuse yourself to my team. Publicly."
+        }
+    ],
+    "context": "",
+    "end_time": "2025-04-28 12:58:49",
+    "model": "GPT-4_notfinetuned",
+    "prolific_id": "Georgi",
+    "questions": 3,
+    "session_id": "23d5914f-4bca-4870-823a-a60f143e4770",
+    "start_time": "2025-04-28 12:54:29"
+}

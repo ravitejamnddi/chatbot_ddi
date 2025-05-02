@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin Stats</title>
+  <link rel="stylesheet" href="https://ichatbot.app/assets/modules/bootstrap/css/bootstrap.min.css">
+</head>
+<body class="bg-light">
+  <div class="container mt-5">
+    <h2 class="mb-4">📊 User Session Dashboard</h2>
+    <a href="/export-excel" class="btn btn-success mb-3">⬇️ Export to Excel</a>
+    <table class="table table-bordered table-striped">
+      <thead class="thead-dark">
+        <tr>         
+          <th>Prolific ID</th>
+          <th>Model</th>
+          <th>Questions Asked</th>
+          <th>Session ID</th>
+          <th>Chat Start Time</th> <!-- 🆕 Added -->
+          <th>Chat Duration</th>   <!-- 🆕 Existing -->
+          <th>Chat Log</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for row in records %}
+          <tr>          
+            <td>{{ row.prolific_id }}</td>
+            <td>{{ row.model }}</td>
+            <td>{{ row.questions }}</td>
+            <td>{{ row.session_id }}</td>
+            <td>
+              {% if row.start_time %}
+                {{ row.start_time }}
+              {% else %}
+                <span class="text-muted">N/A</span>
+              {% endif %}
+            </td>
+            <td>
+              {% if row.chat_duration %}
+                {{ row.chat_duration }}
+              {% else %}
+                <span class="text-muted">N/A</span>
+              {% endif %}
+            </td>
+            <td>
+              {% if row.chat_exists %}
+                <a href="/chat-log/chat_{{ row.session_id }}.json" target="_blank" class="btn btn-sm btn-outline-primary">View</a>
+              {% else %}
+                <span class="text-muted">Not Found</span>
+              {% endif %}
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <a href="/admin-dashboard" class="btn btn-secondary">⬅️ Back</a>
+  </div>
+</body>
+</html>

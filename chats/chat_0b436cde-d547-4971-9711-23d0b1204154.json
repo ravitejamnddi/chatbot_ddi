@@ -1,0 +1,15 @@
+{
+    "chat_history": [
+        {
+            "user": "what is abc",
+            "response": "<p>The term \"ABC\" can refer to a variety of things depending on the context. Here are some possible interpretations:</p>\n\n<ul>\n    <li><strong>Alphabet:</strong> \"ABC\" often refers to the first three letters of the Latin alphabet and is sometimes used to denote the basics or fundamentals of any subject.</li>\n    <li><strong>American Broadcasting Company (ABC):</strong> A major television network in the United States.</li>\n    <li><strong>ABC Stores:</strong> A chain of convenience stores, especially known in Hawaii.</li>\n    <li><strong>ABC Analysis:</strong> A method of categorizing inventory or other items into three categories (A, B, and C) based on their importance.</li>\n    <li><strong>ABC in Chemistry:</strong> Stands for \"ATP-binding cassette,\" a family of proteins.</li>\n    <li><strong>ABC in Mathematics:</strong> Refers to the ABC conjecture, an unsolved problem in number theory.</li>\n    <li><strong>ABC in Medicine:</strong> Basic life support principles: Airway, Breathing, and Circulation.</li>\n    <li><strong>Anything But Chardonnay (ABC):</strong> A term used by wine enthusiasts who prefer wines other than Chardonnay.</li>\n    <li><strong>ABC Song:</strong> A popular children's song used to teach the alphabet.</li>\n    <li><strong>ABC in Business:</strong> Activity-Based Costing, a costing method.</li>\n</ul>\n\n<p>If you have a specific context in mind, please provide more details so I can give you a more targeted explanation.</p>"
+        }
+    ],
+    "context": "",
+    "fname": "Admin",
+    "lname": "User",
+    "model": "GPT-4o",
+    "prolific_id": "admin-session",
+    "questions": 1,
+    "session_id": "0b436cde-d547-4971-9711-23d0b1204154"
+}

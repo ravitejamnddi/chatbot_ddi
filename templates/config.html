@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin Config | Model Context</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://ichatbot.app/assets/modules/bootstrap/css/bootstrap.min.css">
+  <script>
+    function toggleLlamaContext() {
+      const checkbox = document.getElementById("use_same");
+      const llamaArea = document.getElementById("llama_context");
+      llamaArea.disabled = checkbox.checked;
+    }
+
+    window.onload = function () {
+      toggleLlamaContext(); // run on page load
+    };
+  </script>
+</head>
+<body class="bg-light">
+  <div class="container mt-5">
+    <h2>🛠️ Admin Context Configuration</h2>
+
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <div class="alert alert-success">{{ messages[0] }}</div>
+      {% endif %}
+    {% endwith %}
+
+    <form method="POST">
+      <!-- Checkbox to control shared context -->
+      <div class="form-check mb-3">
+        <input class="form-check-input" type="checkbox" id="use_same" name="use_same" onchange="toggleLlamaContext()" {% if context.use_same %}checked{% endif %}>
+        <label class="form-check-label" for="use_same">
+          Use the same context for both GPT-4o and LLaMA
+        </label>
+      </div>
+
+      <!-- GPT Context -->
+      <div class="form-group">
+        <label for="context_gpt">Context for GPT-4o</label>
+        <textarea name="context_gpt" id="context_gpt" class="form-control" rows="5" placeholder="Enter context for GPT-4o">{{ context.gpt }}</textarea>
+      </div>
+
+      <!-- LLaMA Context (disabled if checkbox is checked) -->
+      <div class="form-group">
+        <label for="llama_context">Context for LLaMA 3.1</label>
+        <textarea name="context_llama" id="llama_context" class="form-control" rows="5" placeholder="Enter context for LLaMA">{{ context.llama }}</textarea>
+      </div>
+
+      <button type="submit" class="btn btn-primary">💾 Save Context</button>
+      <a href="/chat" class="btn btn-secondary ml-2">💬 Go to Chat</a>
+    </form>
+  </div>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://ichatbot.app/assets/modules/bootstrap/css/bootstrap.min.css">
+</head>
+<body class="bg-light">
+  <div class="container mt-5">
+    <h2 class="mb-4">👨‍💼 Admin Dashboard</h2>
+
+    <div class="list-group mb-4">
+      <a href="/chat" class="list-group-item list-group-item-action">💬 Start a Chat</a>
+      <a href="/config" class="list-group-item list-group-item-action">⚙️ Configure Model Context</a>
+      <a href="/admin-stats" class="list-group-item list-group-item-action">📊 View User Logs & History</a>
+      <a href="/export-excel" class="list-group-item list-group-item-action">⬇️ Export Logs to Excel</a>
+    </div>
+
+    <form method="POST" action="/exit">
+      <button type="submit" class="btn btn-danger">🚪 Logout</button>
+    </form>
+  </div>
+</body>
+</html>

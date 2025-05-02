@@ -1,0 +1,28 @@
+{
+    "chat_duration": "",
+    "chat_history": [
+        {
+            "response": "Hello! How can I assist you today?",
+            "user": "Hey"
+        },
+        {
+            "response": "I'm sorry to hear that you had a conflict with your manager today. If you'd like to talk about what happened or explore ways to address the situation, I'm here to listen and help in any way I can.",
+            "user": "Remeber that i had an conflict today with my manager today"
+        },
+        {
+            "response": "I'm sorry, but I don't have access to information about your personal activities or experiences. If you're dealing with a conflict and would like to talk about it or need some advice, I'm here to help.",
+            "user": "With whom did i had conflict today"
+        },
+        {
+            "user": "what did i tell you in the previous message",
+            "response": "I'm sorry, but I don't have any record of a previous message from you in our conversation. Could you please let me know what you'd like to discuss or how I can assist you?"
+        }
+    ],
+    "context": "",
+    "end_time": "",
+    "model": "GPT-4_notfinetuned",
+    "prolific_id": "1234",
+    "questions": 4,
+    "session_id": "610cdfad-6eec-4d9a-8398-9067a28afeb3",
+    "start_time": "2025-05-01 15:38:52"
+}
