@@ -43,7 +43,7 @@
             </td>
             <td>
               {% if row.chat_exists %}
-                <a href="/chat-log/chat_{{ row.session_id }}.json" target="_blank" class="btn btn-sm btn-outline-primary">View</a>
+                <a href="/chat-log/{{ row.session_id }}" target="_blank" class="btn btn-sm btn-outline-primary">View</a>
               {% else %}
                 <span class="text-muted">Not Found</span>
               {% endif %}

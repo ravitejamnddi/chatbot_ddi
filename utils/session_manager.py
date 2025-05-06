@@ -13,6 +13,8 @@ def create_session(model, context=""):
 
 def add_message(session_data, user, response):
     session_data["chat_history"].append({"user": user, "response": response})
+    print("-------------------------------Added message to session data--------------------------------")
+    print(session_data["chat_history"], len(session_data["chat_history"]))
 
 def save_session(session_data):
     path = os.path.join(CHAT_DIR, f"chat_{session_data['session_id']}.json")

@@ -4,9 +4,16 @@ from utils.session_manager import create_session, add_message, save_session
 import os, json, csv
 from datetime import datetime
 import pandas as pd
+from flask import jsonify
+from flask_pymongo import PyMongo
+from bson.objectid import ObjectId
 
 app = Flask(__name__)
 app.secret_key = "435664546465443466"
+
+
+app.config["MONGO_URI"] = os.getenv("MONGO_URI")
+mongo = PyMongo(app)
 
 CONTEXT_FILE = "context.json"
 TRACKING_FILE = "user_sessions.csv"
@@ -14,17 +21,17 @@ MODEL_COUNT = {"GPT-4_notfinetuned": 0, "LLaMA_notfinetuned": 0}
 
 @app.before_request
 def init_once():
-    if not session.get("initialized"):
-        os.makedirs("chats", exist_ok=True)
-        if not os.path.exists(TRACKING_FILE):
-            with open(TRACKING_FILE, "w", newline="") as f:
-                writer = csv.writer(f)
-                writer.writerow(["prolific_id", "session_id", "model", "questions", "start_time", "end_time", "chat_duration"])
-        session["initialized"] = True
+    # Remove file system initialization if using MongoDB exclusively
+    # os.makedirs("chats", exist_ok=True)
+    # if not os.path.exists(TRACKING_FILE):
+    #    with open(TRACKING_FILE, "w", newline="") as f:
+    #         writer = csv.writer(f)
+    #         writer.writerow(["prolific_id", "session_id", "model", "questions", "start_time", "end_time", "chat_duration"])
+    session.setdefault("initialized", True)
 
-@app.route("/chat-log/<filename>")
-def serve_chat_log(filename):
-    return send_from_directory("chats", filename)
+# @app.route("/chat-log/<filename>")
+# def serve_chat_log(filename):
+#     return send_from_directory("chats", filename)
 
 @app.route("/", methods=["GET", "POST"])
 def login():
@@ -47,38 +54,34 @@ def login():
 def admin_dashboard():
     if session.get("role") != "admin":
         return redirect("/chat")
-
-    prolific_ids = []
-    if os.path.exists(TRACKING_FILE):
-        with open(TRACKING_FILE, newline="") as f:
-            reader = csv.DictReader(f)
-            prolific_ids = list(reader)
-
-    return render_template("admin_dashboard.html", prolific_ids=prolific_ids)
+    
+    sessions = list(mongo.db.chat_sessions.find())
+    return render_template("admin_dashboard.html", sessions=sessions)
 
 @app.route("/admin-stats")
 def admin_stats():
     if session.get("role") != "admin":
         return redirect("/chat")
-
-    records = []
-    if os.path.exists(TRACKING_FILE):
-        with open(TRACKING_FILE, newline="") as f:
-            reader = csv.DictReader(f)
-            records = list(reader)
-    for row in records:
-        chat_file = f"chats/chat_{row['session_id']}.json"
-        row["chat_exists"] = os.path.exists(chat_file)
+    
+    records = list(mongo.db.chat_sessions.find())
+    # Optionally add a flag if chat history exists
+    for record in records:
+        record["chat_exists"] = bool(record.get("chat_history"))
     return render_template("admin_stats.html", records=records)
+
+from flask import send_file
 
 @app.route("/export-excel")
 def export_excel():
     if session.get("role") != "admin":
         return redirect("/chat")
-    df = pd.read_csv(TRACKING_FILE)
-    output_path = os.path.join("chats", "dashboard_export.xlsx")
+    
+    # Get all sessions without the MongoDB _id field if desired
+    records = list(mongo.db.chat_sessions.find({}, {'_id': 0}))
+    df = pd.DataFrame(records)
+    output_path = "dashboard_export.xlsx"
     df.to_excel(output_path, index=False)
-    return send_from_directory("chats", "dashboard_export.xlsx", as_attachment=True)
+    return send_file(output_path, as_attachment=True)
 
 @app.route("/config", methods=["GET", "POST"])
 def config():
@@ -105,105 +108,113 @@ def chat():
         with open(CONTEXT_FILE) as f:
             context_data = json.load(f)
     
+    # If POST request is used
     if request.method == "POST":
         if "exit" in request.form:
-            return exit_chat()
-
+            return redirect("/exit")
+            
+        # For admin session where model was pre-selected
         if session.get("role") == "admin" and "model" in request.form:
             model = request.form["model"]
             selected_context = context_data["gpt"] if model.startswith("GPT-4") else context_data["llama"]
-
             data = create_session(model, selected_context)
             data["prolific_id"] = "admin-session"
             data["questions"] = 0
             data["start_time"] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
             data["end_time"] = ""
             data["chat_duration"] = ""
-            session["session_data"] = data
+            data["chat_history"] = []  # initialize an empty chat history
 
-            # ✅ Now after creating admin session, immediately reload chat page
+            # Insert the session document into MongoDB
+            result = mongo.db.chat_sessions.insert_one(data)
+            session["chat_session_id"] = str(result.inserted_id)
             return redirect("/chat")
-
-
-        # if admin is chatting normally (already selected model)
-        if "message" in request.form:
+        
+        # For regular POST messages, update chat history
+        if "message" in request.form and "chat_session_id" in session:
             prompt = request.form.get("message")
-            data = session["session_data"]
-            reply = get_response(data["model"], data["context"], data["chat_history"], prompt)
-            add_message(data, prompt, reply)
-            data["questions"] += 1
-            save_session(data)
-            session["session_data"] = data
+            chat_session = mongo.db.chat_sessions.find_one({"_id": ObjectId(session["chat_session_id"])})
+            history = chat_session.get("chat_history", [])
+            reply = get_response(chat_session["model"], chat_session["context"], history, prompt)
+            # Append the interaction to the chat history
+            history.append({"user": prompt, "response": reply})
+            # Update the document with new chat history and increased question count
+            mongo.db.chat_sessions.update_one(
+                {"_id": chat_session["_id"]},
+                {"$set": {"chat_history": history},
+                 "$inc": {"questions": 1}}
+            )
+    
+    # If no chat session exists, create a new session document
+    if "chat_session_id" not in session:
+        # Decide model for non-admin users automatically
+        # if session.get("role") != "admin":
+        #     model = "GPT-4_notfinetuned" if MODEL_COUNT["GPT-4_notfinetuned"] <= MODEL_COUNT["LLaMA_notfinetuned"] else "LLaMA_notfinetuned"
+        #     MODEL_COUNT[model] += 1
+        #     selected_context = context_data["gpt"] if model.startswith("GPT-4") else (
+        #         context_data["gpt"] if context_data.get("use_same") else context_data["llama"]
+        #     )
+        # else:
+        #     # For admin default
+        #     model = "GPT-4_notfinetuned"
+        #     selected_context = context_data["gpt"]
 
-    # ✅ Now for both admin and user, check if session exists
-    if "session_data" not in session:
-        # No session created yet (first time user login)
-        # if session.get("role") == "admin":
-            # return render_template("chat_admin.html", context=context_data)
-
-        # Normal user - assign model automatically
-        if MODEL_COUNT["GPT-4_notfinetuned"] <= MODEL_COUNT["LLaMA_notfinetuned"]:
-            model = "GPT-4_notfinetuned"
-        else:
-            model = "LLaMA_notfinetuned"
+        model = "GPT-4_notfinetuned" if MODEL_COUNT["GPT-4_notfinetuned"] <= MODEL_COUNT["LLaMA_notfinetuned"] else "LLaMA_notfinetuned"
         MODEL_COUNT[model] += 1
-
         selected_context = context_data["gpt"] if model.startswith("GPT-4") else (
             context_data["gpt"] if context_data.get("use_same") else context_data["llama"]
         )
 
         data = create_session(model, selected_context)
-        if session.get('role')=='admin' and session.get("prolific_id") is None:
-            data["prolific_id"] = ''
-        else:
-            data["prolific_id"] = session["prolific_id"]
+        data["prolific_id"] = session.get("prolific_id", "")
         data["questions"] = 0
         data["start_time"] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         data["end_time"] = ""
         data["chat_duration"] = ""
-        session["session_data"] = data
+        data["chat_history"] = []
 
-        with open(TRACKING_FILE, "a", newline="") as f:
-            writer = csv.writer(f)
-            writer.writerow([
-                data["prolific_id"], data["session_id"], data["model"],
-                0, data["start_time"], "", ""
-            ])
-
-    # Finally render correct chat template based on role
+        result = mongo.db.chat_sessions.insert_one(data)
+        session["chat_session_id"] = str(result.inserted_id)
+    
+    # Render the appropriate template based on the role
+    chat_session = mongo.db.chat_sessions.find_one({"_id": ObjectId(session["chat_session_id"])})
     template = "chat_admin.html" if session.get("role") == "admin" else "chat.html"
-    return render_template(template, session_data=session.get("session_data"))
+    return render_template(template, session_data=chat_session)
+
+
+
+@app.route("/chat-log/<session_identifier>")
+def chat_log(session_identifier):
+    # First try to find using the custom session_id field
+    chat_session = mongo.db.chat_sessions.find_one({"session_id": session_identifier})
+    
+    # If not found, try using the MongoDB _id field
+    if not chat_session:
+        try:
+            chat_session = mongo.db.chat_sessions.find_one({"_id": ObjectId(session_identifier)})
+        except Exception:
+            pass
+    if not chat_session:
+        return "Chat session not found", 404
+    return jsonify(chat_history=chat_session.get("chat_history", []))
+
+
 
 @app.route("/exit", methods=["POST"])
 def exit_chat():
-    data = session.get("session_data")
-    if data:
-        end_time = datetime.now()
-        data["end_time"] = end_time.strftime("%Y-%m-%d %H:%M:%S")
-
-        start_dt = datetime.strptime(data["start_time"], "%Y-%m-%d %H:%M:%S")
-        duration = end_time - start_dt
-        minutes, seconds = divmod(duration.total_seconds(), 60)
-        data["chat_duration"] = f"{int(minutes)} min {int(seconds)} sec"
-
-        save_session(data)
-
-        # ✅ Update CSV also
-        rows = []
-        if os.path.exists(TRACKING_FILE):
-            with open(TRACKING_FILE, newline="") as f:
-                reader = csv.DictReader(f)
-                for row in reader:
-                    if row["session_id"] == data["session_id"]:
-                        row["end_time"] = data["end_time"]
-                        row["chat_duration"] = data["chat_duration"]
-                        row["questions"] = str(data["questions"])  # ✅ Now also update Questions!
-                    rows.append(row)
-
-        with open(TRACKING_FILE, "w", newline="") as f:
-            writer = csv.DictWriter(f, fieldnames=["prolific_id", "session_id", "model", "questions", "start_time", "end_time", "chat_duration"])
-            writer.writeheader()
-            writer.writerows(rows)
-
+    if "chat_session_id" in session:
+        chat_session = mongo.db.chat_sessions.find_one({"_id": ObjectId(session["chat_session_id"])})
+        if chat_session:
+            end_time = datetime.now()
+            end_time_str = end_time.strftime("%Y-%m-%d %H:%M:%S")
+            start_dt = datetime.strptime(chat_session["start_time"], "%Y-%m-%d %H:%M:%S")
+            duration = end_time - start_dt
+            minutes, seconds = divmod(duration.total_seconds(), 60)
+            chat_duration = f"{int(minutes)} min {int(seconds)} sec"
+            
+            mongo.db.chat_sessions.update_one(
+                {"_id": chat_session["_id"]},
+                {"$set": {"end_time": end_time_str, "chat_duration": chat_duration}}
+            )
     session.clear()
     return redirect("/")
