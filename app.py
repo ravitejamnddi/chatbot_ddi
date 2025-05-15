@@ -7,6 +7,7 @@ import pandas as pd
 from flask import jsonify
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
+from flask import send_file
 
 app = Flask(__name__)
 app.secret_key = "435664546465443466"
@@ -21,17 +22,7 @@ MODEL_COUNT = {"GPT-4_notfinetuned": 0, "LLaMA_notfinetuned": 0}
 
 @app.before_request
 def init_once():
-    # Remove file system initialization if using MongoDB exclusively
-    # os.makedirs("chats", exist_ok=True)
-    # if not os.path.exists(TRACKING_FILE):
-    #    with open(TRACKING_FILE, "w", newline="") as f:
-    #         writer = csv.writer(f)
-    #         writer.writerow(["prolific_id", "session_id", "model", "questions", "start_time", "end_time", "chat_duration"])
     session.setdefault("initialized", True)
-
-# @app.route("/chat-log/<filename>")
-# def serve_chat_log(filename):
-#     return send_from_directory("chats", filename)
 
 @app.route("/", methods=["GET", "POST"])
 def login():
@@ -58,26 +49,44 @@ def admin_dashboard():
     sessions = list(mongo.db.chat_sessions.find())
     return render_template("admin_dashboard.html", sessions=sessions)
 
+def update_chat_duration(record):
+    start_time_str = record.get("start_time")
+    if start_time_str:
+        try:
+            start_dt = datetime.strptime(start_time_str, "%Y-%m-%d %H:%M:%S")
+            if record.get("last_interaction_time"):
+                end_dt = datetime.strptime(record["last_interaction_time"], "%Y-%m-%d %H:%M:%S")
+            elif record.get("end_time"):
+                end_dt = datetime.strptime(record["end_time"], "%Y-%m-%d %H:%M:%S")
+            else:
+                end_dt = datetime.now()
+            duration = end_dt - start_dt
+            minutes, seconds = divmod(duration.total_seconds(), 60)
+            record["chat_duration"] = f"{int(minutes)} min {int(seconds)} sec"
+        except Exception:
+            record["chat_duration"] = ""
+    else:
+        record["chat_duration"] = ""
+
 @app.route("/admin-stats")
 def admin_stats():
     if session.get("role") != "admin":
         return redirect("/chat")
     
     records = list(mongo.db.chat_sessions.find())
-    # Optionally add a flag if chat history exists
     for record in records:
         record["chat_exists"] = bool(record.get("chat_history"))
+        update_chat_duration(record)
     return render_template("admin_stats.html", records=records)
-
-from flask import send_file
 
 @app.route("/export-excel")
 def export_excel():
     if session.get("role") != "admin":
         return redirect("/chat")
     
-    # Get all sessions without the MongoDB _id field if desired
     records = list(mongo.db.chat_sessions.find({}, {'_id': 0}))
+    for record in records:
+        update_chat_duration(record)
     df = pd.DataFrame(records)
     output_path = "dashboard_export.xlsx"
     df.to_excel(output_path, index=False)
@@ -130,19 +139,18 @@ def chat():
             session["chat_session_id"] = str(result.inserted_id)
             return redirect("/chat")
         
-        # For regular POST messages, update chat history
         if "message" in request.form and "chat_session_id" in session:
             prompt = request.form.get("message")
             chat_session = mongo.db.chat_sessions.find_one({"_id": ObjectId(session["chat_session_id"])})
             history = chat_session.get("chat_history", [])
             reply = get_response(chat_session["model"], chat_session["context"], history, prompt)
-            # Append the interaction to the chat history
-            history.append({"user": prompt, "response": reply})
-            # Update the document with new chat history and increased question count
+            message_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+            history.append({"user": prompt, "response": reply, "timestamp": message_time})
+            print(f"message time: {message_time}")
             mongo.db.chat_sessions.update_one(
                 {"_id": chat_session["_id"]},
-                {"$set": {"chat_history": history},
-                 "$inc": {"questions": 1}}
+                {"$set": {"chat_history": history, "last_interaction_time": message_time},
+                "$inc": {"questions": 1}}
             )
     
     # If no chat session exists, create a new session document
@@ -205,16 +213,13 @@ def exit_chat():
     if "chat_session_id" in session:
         chat_session = mongo.db.chat_sessions.find_one({"_id": ObjectId(session["chat_session_id"])})
         if chat_session:
-            end_time = datetime.now()
-            end_time_str = end_time.strftime("%Y-%m-%d %H:%M:%S")
-            start_dt = datetime.strptime(chat_session["start_time"], "%Y-%m-%d %H:%M:%S")
-            duration = end_time - start_dt
-            minutes, seconds = divmod(duration.total_seconds(), 60)
-            chat_duration = f"{int(minutes)} min {int(seconds)} sec"
-            
+            # Update the chat_session record using the helper function
+            update_chat_duration(chat_session)
+            # Determine end_time: use last_interaction_time if available, else current time
+            end_time_str = chat_session.get("last_interaction_time") or datetime.now().strftime("%Y-%m-%d %H:%M:%S")
             mongo.db.chat_sessions.update_one(
                 {"_id": chat_session["_id"]},
-                {"$set": {"end_time": end_time_str, "chat_duration": chat_duration}}
+                {"$set": {"end_time": end_time_str, "chat_duration": chat_session["chat_duration"]}}
             )
     session.clear()
     return redirect("/")
