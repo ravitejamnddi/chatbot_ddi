@@ -146,7 +146,6 @@ def chat():
             reply = get_response(chat_session["model"], chat_session["context"], history, prompt)
             message_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
             history.append({"user": prompt, "response": reply, "timestamp": message_time})
-            print(f"message time: {message_time}")
             mongo.db.chat_sessions.update_one(
                 {"_id": chat_session["_id"]},
                 {"$set": {"chat_history": history, "last_interaction_time": message_time},
@@ -155,18 +154,6 @@ def chat():
     
     # If no chat session exists, create a new session document
     if "chat_session_id" not in session:
-        # Decide model for non-admin users automatically
-        # if session.get("role") != "admin":
-        #     model = "GPT-4_notfinetuned" if MODEL_COUNT["GPT-4_notfinetuned"] <= MODEL_COUNT["LLaMA_notfinetuned"] else "LLaMA_notfinetuned"
-        #     MODEL_COUNT[model] += 1
-        #     selected_context = context_data["gpt"] if model.startswith("GPT-4") else (
-        #         context_data["gpt"] if context_data.get("use_same") else context_data["llama"]
-        #     )
-        # else:
-        #     # For admin default
-        #     model = "GPT-4_notfinetuned"
-        #     selected_context = context_data["gpt"]
-
         model = "GPT-4_notfinetuned" if MODEL_COUNT["GPT-4_notfinetuned"] <= MODEL_COUNT["LLaMA_notfinetuned"] else "LLaMA_notfinetuned"
         MODEL_COUNT[model] += 1
         selected_context = context_data["gpt"] if model.startswith("GPT-4") else (
@@ -213,13 +200,12 @@ def exit_chat():
     if "chat_session_id" in session:
         chat_session = mongo.db.chat_sessions.find_one({"_id": ObjectId(session["chat_session_id"])})
         if chat_session:
-            # Update the chat_session record using the helper function
-            update_chat_duration(chat_session)
-            # Determine end_time: use last_interaction_time if available, else current time
             end_time_str = chat_session.get("last_interaction_time") or datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+            chat_session["end_time"] = end_time_str
+            update_chat_duration(chat_session)
             mongo.db.chat_sessions.update_one(
                 {"_id": chat_session["_id"]},
-                {"$set": {"end_time": end_time_str, "chat_duration": chat_session["chat_duration"]}}
+                {"$set": {"end_time": chat_session["end_time"], "chat_duration": chat_session["chat_duration"]}}
             )
     session.clear()
     return redirect("/")
