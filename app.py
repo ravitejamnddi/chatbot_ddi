@@ -110,6 +110,34 @@ def config():
         return redirect("/config")
     return render_template("config.html", context=context)
 
+
+def get_existing_model_for_user(prolific_id):
+    """ Returns the model used in the existing session for the given prolific_id, or None if no session exists. """
+    existing_session = mongo.db.chat_sessions.find_one({"prolific_id": prolific_id})
+    if existing_session:
+        return existing_session["model"]
+    return None
+
+
+def fill_personality_prompt(Prolific, user_data, prompt):
+    personality_traits = user_data.get(Prolific)
+    if not personality_traits:
+        raise ValueError(f"User ID {Prolific} not found in user data.")
+    filled_prompt = prompt.format(
+        extroversion=personality_traits['Extra_lab'],
+        conscientiousness=personality_traits['Consc_lab'],
+        agreeableness=personality_traits['Agree_lab'],
+        neuroticism=personality_traits['Neuro_lab'],
+        openness=personality_traits['Open_lab']
+    )
+
+    return filled_prompt
+
+def load_user_data_from_csv(file_path):
+    df = pd.read_csv(file_path)
+    user_data = df.set_index('Prolific').T.to_dict()
+    return user_data
+
 @app.route("/chat", methods=["GET", "POST"])
 def chat():
     context_data = {"use_same": True, "gpt": "", "llama": ""}
@@ -151,14 +179,25 @@ def chat():
                 {"$set": {"chat_history": history, "last_interaction_time": message_time},
                 "$inc": {"questions": 1}}
             )
-    
+
     # If no chat session exists, create a new session document
     if "chat_session_id" not in session:
-        model = "GPT-4_notfinetuned" if MODEL_COUNT["GPT-4_notfinetuned"] <= MODEL_COUNT["LLaMA_notfinetuned"] else "LLaMA_notfinetuned"
+        prolific_id = session.get("prolific_id", "")
+        # model = get_existing_model_for_user(prolific_id)
+        # if not model:
+        #     model = "GPT-4_notfinetuned" if MODEL_COUNT["GPT-4_notfinetuned"] <= MODEL_COUNT["LLaMA_notfinetuned"] else "LLaMA_notfinetuned"
+        # selected_context = context_data["gpt"] if model.startswith("GPT-4") else (
+        #     context_data["gpt"] if context_data.get("use_same") else context_data["llama"]
+        # )
+        model = "LLaMA_notfinetuned"
         MODEL_COUNT[model] += 1
-        selected_context = context_data["gpt"] if model.startswith("GPT-4") else (
-            context_data["gpt"] if context_data.get("use_same") else context_data["llama"]
-        )
+        selected_context = context_data["llama"]
+     
+        user_data = load_user_data_from_csv("C:/Users/RNallakk/exp/Chatbot_Mongo_duration_update/chatbot_ddi\Rd1_combined.csv")
+        selected_context = fill_personality_prompt(prolific_id, user_data, selected_context)
+        print('=='*50)
+        print(f"Selected context for user {prolific_id}: {selected_context}")
+
 
         data = create_session(model, selected_context)
         data["prolific_id"] = session.get("prolific_id", "")
